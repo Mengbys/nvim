@@ -3,6 +3,9 @@ local Plug = vim.fn['plug#']
 vim.call('plug#begin', 'C:\\Users\\12048\\AppData\\Local\\nvim\\plugged')
 
 -- new
+-- plugin using lua
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'kyazdani42/nvim-tree.lua'
 Plug 'simrat39/symbols-outline.nvim'
 Plug 'neovim/nvim-lspconfig'
 Plug 'hrsh7th/cmp-nvim-lsp'
@@ -12,21 +15,26 @@ Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'quangnguyen30192/cmp-nvim-ultisnips'
 Plug 'karb94/neoscroll.nvim'
+Plug 'glepnir/dashboard-nvim'
+-- new find engine
+Plug('junegunn/fzf', { ['do'] = vim.fn['fzf#install'] })
+Plug 'junegunn/fzf.vim'
 
-
-Plug 'mhinz/vim-startify'
+-- Plug 'mhinz/vim-startify'
 Plug 'cocopon/iceberg.vim'
 Plug 'overcache/NeoSolarized'
+Plug 'pineapplegiant/spaceduck'
+Plug 'liuchengxu/space-vim-dark'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'preservim/nerdtree'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+-- Plug 'preservim/nerdtree'
+-- Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'jiangmiao/auto-pairs'
 Plug 'easymotion/vim-easymotion'
 Plug 'godlygeek/tabular'
 Plug 'tpope/vim-commentary'
 Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
+Plug 'mengbys/vim-snippets'
 Plug 'tpope/vim-surround'
 Plug 'terryma/vim-expand-region'
 Plug 'kana/vim-textobj-user'
@@ -35,5 +43,7 @@ Plug 'rhysd/clever-f.vim'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'junegunn/goyo.vim'
 Plug 'dstein64/vim-startuptime'
+-- Plug 'gcmt/taboo.vim'
+Plug 'sheerun/vim-polyglot'
 
 vim.call('plug#end')

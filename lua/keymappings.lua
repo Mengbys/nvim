@@ -1,3 +1,4 @@
+-- normal
 vim.g.mapleader=','
 vim.api.nvim_set_keymap('n','<c-p>',':bp!<cr>',{noremap=true,silent=true});
 vim.api.nvim_set_keymap('n','<c-n>',':bn!<cr>',{noremap=true,silent=true});
@@ -17,7 +18,17 @@ vim.api.nvim_set_keymap('v','<leader><leader>y','\"+y',{noremap=true,silent=true
 vim.api.nvim_set_keymap('n','<leader><leader>ay','ggVG\"+y',{noremap=true,silent=true});
 vim.api.nvim_set_keymap('n','<leader><leader>p','\"+p',{noremap=true,silent=true})
 vim.api.nvim_set_keymap('n','<leader><leader>P','\"+P',{noremap=true,silent=true})
-vim.api.nvim_set_keymap('n','<leader>h',':Startify<cr>',{noremap=true,silent=true})
 vim.api.nvim_set_keymap('n','<leader>s',':w<cr>',{noremap=true,silent=true})
 vim.api.nvim_set_keymap('n','<leader>cd',':cd %:p:h<cr>',{noremap=true,silent=true})
 
+
+-- dashboard
+vim.api.nvim_set_keymap('n','<leader>h',':Dashboard<cr>',{noremap=true,silent=true})
+vim.api.nvim_set_keymap('n','<leader>fm',':DashboardFindHistory<CR>',{noremap=true,silent=true})
+vim.api.nvim_set_keymap('n','<leader>ff',':DashboardFindFile<CR>',{noremap=true,silent=true})
+
+
+-- fzf
+-- vim.api.nvim_set_keymap('n','<leader>fm',':History<CR>',{noremap=true,silent=true})
+-- vim.api.nvim_set_keymap('n','<leader>ff',':Files<CR>',{noremap=true,silent=true})
+vim.api.nvim_set_keymap('n','<leader>fb',':Buffers<cr>',{noremap=true,silent=true})
