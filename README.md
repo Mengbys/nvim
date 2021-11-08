@@ -64,4 +64,4 @@ would like to use the time to coding!
 + [nvim-tree.lua](https://github.com/kyazdani42/nvim-tree.lua)
 
 ## Screenshot
-![screenshot](https://github.com/Mengbys/nvim/images/1.png)
+![screenshot](https://github.com/Mengbys/nvim/blob/main/images/1.png)
