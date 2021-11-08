@@ -29,7 +29,7 @@ would like to use the time to coding!
 | ,fm                     | find mru file                        |
 | ,ff                     | find file under CWD                  |
 | ,fb                     | find buffer                          |
-| ,/<char>                | align by <char>                      |
+| ,/x                     | align by x                           |
 | ,///                    | align by '//'                        |
 | gc+motion               | comment the field moved              |
 | gcc                     | comment a line                       |
@@ -50,9 +50,9 @@ would like to use the time to coding!
 | ALT+b                   | back insert bracket                  |
 | ALT+e                   | put the content behind into brackets |
 | ALT+n                   | jump to next bracket                 |
-| ds<quot>                | delete <quote>                       |
-| ys<textobj><quot>       | add <quote> arround <textobj>        |
-| cs<quot1><quot2>        | change <quot1> to <quot2>            |
+| ds'                     | delete '' (can extend)               |
+| ysiw'                   | add '' arround word (can extend)     |
+| cs'"                    | change '' to "" (can extend)         |
 
 ## Other Shortcuts
 (under construction)
