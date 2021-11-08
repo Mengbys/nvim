@@ -1,7 +1,7 @@
 # This is my configuration of neovim with lua
 Why transfer to Neovim from Vim? Because my Vim using YouCompleteme and Tagbar
-is unbearablly slow in my laptop. Especially when I change buffer with CTRL-n
-and CTRL-p. Maybe it is because my laptop is trash?
+is unbearablly slow in my laptop. Especially when I change buffer with CTRL+n
+and CTRL+p. Maybe it is because my laptop is trash?
 
 I am looking for a minimal setting for my vim editor. I need it to response
 quicklly. Now it is a hard work for me.
@@ -13,10 +13,10 @@ would like to use the time to coding!
 | shortcut                | function                             |
 | :-:                     | :-:                                  |
 | ,                       | leader key                           |
-| CTRL-n/p                | jump to next/previous buffer         |
+| CTRL+n/p                | jump to next/previous buffer         |
 | ,d                      | close current buffer                 |
-| CTRL-j/k/h/l            | window navigation                    |
-| CTRL-down/up/right/left | window moving                        |
+| CTRL+j/k/h/l            | window navigation                    |
+| CTRL+down/up/right/left | window moving                        |
 | ,e/q                    | jump to next/previous tabpage        |
 | ,w                      | close current tabpage                |
 | ,,y                     | yank to clipboard                    |
