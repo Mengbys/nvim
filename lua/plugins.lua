@@ -1,6 +1,5 @@
 local Plug = vim.fn['plug#']
-
-vim.call('plug#begin', 'C:\\Users\\12048\\AppData\\Local\\nvim\\plugged')
+vim.call('plug#begin', 'C:/Users/12048/AppData/Local/nvim/plugged')
 
 -- new
 -- plugin using lua
@@ -27,14 +26,15 @@ Plug 'pineapplegiant/spaceduck'
 Plug 'liuchengxu/space-vim-dark'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+-- Plug 'ryanoasis/vim-devicons'
 -- Plug 'preservim/nerdtree'
 -- Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 Plug 'jiangmiao/auto-pairs'
 Plug 'easymotion/vim-easymotion'
-Plug 'godlygeek/tabular'
-Plug 'tpope/vim-commentary'
 Plug 'SirVer/ultisnips'
 Plug 'mengbys/vim-snippets'
+Plug 'godlygeek/tabular'
+Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'terryma/vim-expand-region'
 Plug 'kana/vim-textobj-user'

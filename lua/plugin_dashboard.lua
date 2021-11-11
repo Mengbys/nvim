@@ -1,14 +1,7 @@
 vim.g.dashboard_default_executive = 'fzf'
-vim.cmd[[
-autocmd FileType dashboard nnoremap <silent><buffer> m :DashboardFindHistory<CR>
-autocmd FileType dashboard nnoremap <silent><buffer> f :DashboardFindFile<CR>
-autocmd FileType dashboard nnoremap <silent><buffer> q :exit<CR>
-autocmd FileType dashboard nnoremap <silent><buffer> e :ene<CR>
-autocmd FileType dashboard set showtabline=0 | autocmd BufLeave <buffer> set showtabline=2
-autocmd FileType dashboard set laststatus=0 | autocmd BufLeave <buffer> set laststatus=2
-autocmd FileType dashboard set noruler | autocmd BufLeave <buffer> set ruler
-autocmd filetype dashboard setlocal fillchars+=eob:\ 
-]]
+-- vim.g.dashboard_custom_footer = {'Have fun and have a nice day!'}
+-- vim.g.dashboard_session_directory = '~'
+
 vim.g.dashboard_custom_section = {
     find_history = {
         description = {'ﭯ Recently open files                   m'},
@@ -17,6 +10,10 @@ vim.g.dashboard_custom_section = {
     find_file = {
         description = {' Find file                             f'},
         command = 'DashboardFindFile',
+    },
+    load_session = {
+        description = {' Load last session                     l'},
+        command = 'LS',
     },
     new_file = {
         description = {' New file                              e'},

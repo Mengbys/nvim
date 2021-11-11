@@ -1,3 +1,7 @@
+-- When you change to other platform, you need to change
+-- the path setting in "settings.lua, plugins.lua".
+
+
 require('settings')
 require('plugins')
 require('keymappings')
@@ -31,8 +35,3 @@ vim.g.fzf_preview_window = {'right:50%:hidden','ctrl-/'}
 
 
 
--- other auto commands
-vim.cmd[[
-autocmd filetype markdown,text setlocal textwidth=78
-autocmd filetype help,vim-plug,startuptime nnoremap <silent><buffer> q :exit<CR>
-]]

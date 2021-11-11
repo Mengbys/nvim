@@ -1,4 +1,5 @@
 vim.api.nvim_set_keymap('n','<leader>n',':NvimTreeToggle<CR>',{noremap=true,silent=true})
+vim.g.nvim_tree_quit_on_open = 1
 vim.g.nvim_tree_icons = {
   git = {
     unstaged = "★",
@@ -16,7 +17,7 @@ require'nvim-tree'.setup {
   auto_close          = false,
   open_on_tab         = false,
   hijack_cursor       = false,
-  update_cwd          = false,
+  update_cwd          = true,
   update_to_buf_dir   = {
     enable = true,
     auto_open = true,
