@@ -24,7 +24,6 @@ vim.o.swapfile                = false
 vim.o.hls                     = false
 vim.o.spr                     = true
 vim.o.sb                      = true
-vim.o.autoread                = true
 vim.o.signcolumn              = 'number'
 vim.o.whichwrap               = '<,>,[,]'
 vim.o.laststatus              = 2
@@ -38,12 +37,19 @@ vim.g.loaded_python_provider  = 0
 vim.g.python3_host_skip_check = 1
 vim.g.python3_host_prog       = 'D:\\python39\\python.exe'
 
-
 -- other autocommands and commands
 vim.cmd[[
-set ssop-=blank
 autocmd filetype markdown,text setlocal textwidth=78
 autocmd filetype help,vim-plug,startuptime nnoremap <silent><buffer> q :exit<CR>
+
+" When open a file, always jump to the last cursor position
+autocmd BufReadPost *
+  \ if line("'\"") >= 1 && line("'\"") <= line("$") && &ft !~# 'commit'
+  \ |   exe "normal! g`\""
+  \ | endif
+
+" Session save and load
+set sessionoptions-=blank
 command QS mks! ~\AppData\Local\nvim\tmp\session0.vim | wqa
 command LS so ~\AppData\Local\nvim\tmp\session0.vim
 

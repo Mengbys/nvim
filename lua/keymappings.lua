@@ -33,3 +33,19 @@ vim.api.nvim_set_keymap('n' , '<leader>ff' , ':DashboardFindFile<CR>'    , {nore
 -- vim.api.nvim_set_keymap('n','<leader>fm',':History<CR>',{noremap=true,silent=true})
 -- vim.api.nvim_set_keymap('n','<leader>ff',':Files<CR>',{noremap=true,silent=true})
 vim.api.nvim_set_keymap('n','<leader>fb',':Buffers<cr>',{noremap=true,silent=true})
+
+
+-- vsnip
+vim.cmd[[
+" Expand
+imap <expr> <C-x>   vsnip#expandable()  ? '<Plug>(vsnip-expand)'         : '<C-x>'
+smap <expr> <C-x>   vsnip#expandable()  ? '<Plug>(vsnip-expand)'         : '<C-x>'
+
+" Expand or jump
+imap <expr> <C-l>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>'
+smap <expr> <C-l>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>'
+
+" Jump forward or backward
+imap <expr> <c-b>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<c-b>'
+smap <expr> <c-b>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<c-b>'
+]]

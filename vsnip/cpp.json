@@ -1,0 +1,62 @@
+{
+  "cpp": {
+    "prefix": "cpp",
+    "body": [
+      "#include <iostream>",
+      "using namespace std;",
+      "",
+      "int main()",
+      "{",
+      "\t$0",
+      "",
+      "\treturn 0;",
+      "}"
+    ]
+  },
+  "main": {
+    "prefix": "main",
+    "body": [
+      "int main ()",
+      "{",
+      "\t$0",
+      "",
+      "\treturn 0;",
+      "}"
+    ],
+    "description": "Simple main function"
+  },
+  "cl": {
+    "prefix": "cl",
+    "body": [
+      "class ${1:MyClass}",
+      "{",
+        "public:",
+        "\t$1(${2:Arguments});",
+        "",
+        "private:",
+        "\t$3",
+        "};"
+    ],
+    "description": "Simple class"
+  },
+  "for": {
+    "prefix": "for",
+    "body": [
+      "for(${1:var}; ${2:condition}; ${3:operation})",
+      "{",
+      "\t$0",
+      "}"
+    ],
+    "description": "Simple for loop"
+  },
+  "explain in comment": {
+    "prefix": "ec",
+    "body": [
+      "/*****************************************************************************",
+      "* $0",
+      "*****************************************************************************/"
+    ],
+    "description": "Explain in comment"
+  }
+}
+

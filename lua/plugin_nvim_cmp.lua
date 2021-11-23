@@ -3,39 +3,44 @@ local cmp = require'cmp'
 
 cmp.setup({
     snippet = {
-        expand = function(args)
-            vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
-        end,
+      expand = function(args)
+        vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
+        -- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
+      end,
     },
     sources = {
-        { name = 'nvim_lsp' },
-        { name = 'ultisnips' },
-        { name = 'path' },
+      { name = 'vsnip' },
+      -- { name = 'ultisnips' },
+      { name = 'nvim_lsp' },
+      { name = 'path' },
     },
     mapping = {
-        ['<Tab>'] = cmp.mapping(cmp.mapping.select_next_item(),{'i','c'}),
-        ['<S-Tab>'] = cmp.mapping(cmp.mapping.select_prev_item(),{'i','c'}),
-        ['<c-x>'] = cmp.mapping(cmp.mapping.confirm()),
-        ['<C-d>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
-        ['<C-u>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
+      ['<Tab>'] = cmp.mapping(cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),{'i','c'}),
+      ['<S-Tab>'] = cmp.mapping(cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),{'i','c'}),
+      ['<C-x>'] = cmp.mapping.confirm({
+          behavior = cmp.ConfirmBehavior.Replace,
+          select = true,
+        }),
+      ['<C-d>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
+      ['<C-u>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
     }
-})
+  })
 
 -- Use buffer source for `/`.
 cmp.setup.cmdline('/', {
     sources = {
-        { name = 'buffer' }
+      { name = 'buffer' }
     }
-})
+  })
 
 -- Use cmdline & path source for ':'.
 cmp.setup.cmdline(':', {
     sources = cmp.config.sources({
         { name = 'path' }
-    }, {
+      }, {
         { name = 'cmdline' }
-    })
-})
+      })
+  })
 
 
 -- Setup lspconfig.
@@ -72,5 +77,10 @@ require'lspconfig'.pyright.setup {
 require'lspconfig'.clangd.setup {
   capabilities = capabilities,
   on_attach = on_attach
+}
+require'lspconfig'.svls.setup {
+  capabilities = capabilities,
+  on_attach = on_attach,
+  root_dir = nvim_lsp.util.root_pattern('.svls.toml'),
 }
 
