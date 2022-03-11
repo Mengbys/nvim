@@ -1,7 +1,6 @@
 -- When you change to other platform, you need to change
 -- the path setting in "init.lua, settings.lua, plugins.lua".
 
-
 require('settings')
 require('plugins')
 require('keymappings')
@@ -11,6 +10,7 @@ require('plugin_airline')
 require('plugin_lspconfig')
 require('plugin_nvim_cmp')
 require('plugin_nvim_tree')
+require('plugin_nvim_treesitter')
 require('plugin_symbols_outline')
 require('plugin_easymotion')
 require('plugin_neoscroll')
@@ -39,4 +39,7 @@ vim.g.fzf_preview_window = {'right:50%:hidden','ctrl-/'}
 -- vsnip
 vim.g.vsnip_snippet_dir = 'C:/Users/12048/AppData/Local/nvim/vsnip'
 
+-- glow
+vim.g.glow_binary_path='D:/glow/'
+vim.api.nvim_set_keymap('n','gl',':Glow<CR>',{noremap=true,silent=true})
 

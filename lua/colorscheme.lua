@@ -6,11 +6,12 @@ function! Patch_colors()
     hi LspDiagnosticsDefaultError guifg=red
     hi LspDiagnosticsDefaultWarning guifg=orange
     hi link mkdHeading htmlH1
+    hi DashboardHeader guifg=#ce6f8f
 endfunction
 
 autocmd! Colorscheme * call Patch_colors()
 ]]) 
-vim.cmd[[colorscheme spaceduck]]
-vim.g.airline_theme='dark_change'
+vim.cmd[[colorscheme tokyonight]]
+vim.g.airline_theme='atomic'
     
 

@@ -1,0 +1,44 @@
+{
+  "main": {
+    "prefix": "main",
+    "body": [
+      "int main ()",
+      "{",
+      "\t$0",
+      "",
+      "\treturn 0;",
+      "}"
+    ],
+    "description": "Simple main function"
+  },
+  "for": {
+    "prefix": "for",
+    "body": [
+      "for(${1:var}; ${2:condition}; ${3:operation})",
+      "{",
+      "\t$0",
+      "}"
+    ],
+    "description": "Simple for loop"
+  },
+  "explain in comment type 1": {
+    "prefix": "ec",
+    "body": [
+      "/*",
+      "* $0",
+      "*/"
+    ],
+    "description": "Explain in comment type 1"
+  },
+  "explain in comment type 2": {
+    "prefix": "ecc",
+    "body": [
+      "/*****************************************************************************",
+      "* $0",
+      "*****************************************************************************/"
+    ],
+    "description": "Explain in comment type 2"
+  }
+}
+
+

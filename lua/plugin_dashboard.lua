@@ -49,7 +49,6 @@ vim.g.dashboard_custom_header = {
 
 
 
-
 -- let g:dashboard_custom_header = [
 --       \'             ▄▄▀▀▀▀▀▀▀▀▄▄              ',
 --       \'          ▄▀▀            ▀▄▄           ',

@@ -2,7 +2,7 @@ local Plug = vim.fn['plug#']
 vim.call('plug#begin', 'C:/Users/12048/AppData/Local/nvim/plugged')
 
 -- new
--- plugin using lua
+-- plugins using lua
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'kyazdani42/nvim-tree.lua'
 Plug 'simrat39/symbols-outline.nvim'
@@ -18,15 +18,20 @@ Plug 'hrsh7th/vim-vsnip'
 Plug 'rafamadriz/friendly-snippets'
 Plug 'karb94/neoscroll.nvim'
 Plug 'glepnir/dashboard-nvim'
+Plug('nvim-treesitter/nvim-treesitter', {['do']=vim.fn[':TSUpdate']})
+Plug 'ellisonleao/glow.nvim'
+
 -- new find engine
 Plug('junegunn/fzf', { ['do'] = vim.fn['fzf#install'] })
 Plug 'junegunn/fzf.vim'
+-- Plug 'ibhagwan/fzf-lua'
 
 -- Plug 'mhinz/vim-startify'
 Plug 'cocopon/iceberg.vim'
 Plug 'overcache/NeoSolarized'
 Plug 'pineapplegiant/spaceduck'
 Plug 'liuchengxu/space-vim-dark'
+Plug 'folke/tokyonight.nvim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 -- Plug 'ryanoasis/vim-devicons'
@@ -47,6 +52,6 @@ Plug 'jeffkreeftmeijer/vim-numbertoggle'
 Plug 'junegunn/goyo.vim'
 Plug 'dstein64/vim-startuptime'
 -- Plug 'gcmt/taboo.vim'
-Plug 'sheerun/vim-polyglot'
+-- Plug 'sheerun/vim-polyglot'
 Plug('iamcco/markdown-preview.nvim', { ['do'] = vim.fn['mkdp#util#install'], ['for'] = {'markdown', 'vim-plug'} })
 vim.call('plug#end')

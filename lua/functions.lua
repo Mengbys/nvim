@@ -26,7 +26,7 @@ endfunc
 func FunctionF5()
   exec "w"
   if(&filetype=='c' || &filetype=='cpp')
-    exec "!g++ % -o %<"
+    exec "!g++ % -o main"
   elseif(&filetype=='python')
     exec "!python %"
   elseif(&filetype=='markdown')
@@ -38,7 +38,7 @@ endfunc
 func FunctionF6()
   exec "w"
   if(&filetype=='c' || &filetype=='cpp')
-    exec "!%<"
+    exec "!main"
   endif
 endfunc
 
