@@ -54,4 +54,5 @@ Plug 'dstein64/vim-startuptime'
 -- Plug 'gcmt/taboo.vim'
 -- Plug 'sheerun/vim-polyglot'
 Plug('iamcco/markdown-preview.nvim', { ['do'] = vim.fn['mkdp#util#install'], ['for'] = {'markdown', 'vim-plug'} })
+Plug 'lyokha/vim-xkbswitch'
 vim.call('plug#end')

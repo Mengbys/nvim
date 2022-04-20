@@ -39,7 +39,7 @@ vim.g.python3_host_prog       = 'D:\\python39\\python.exe'
 
 -- other autocommands and commands
 vim.cmd[[
-autocmd filetype markdown,text setlocal textwidth=78
+" autocmd filetype markdown,text setlocal textwidth=78
 autocmd filetype help,vim-plug,startuptime nnoremap <silent><buffer> q :exit<CR>
 
 " When open a file, always jump to the last cursor position

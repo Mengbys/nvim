@@ -46,7 +46,7 @@ endfunc
 func FunctionF8()
   exec "w"
   if(&filetype=='c' || &filetype=='cpp')
-    exec "!g++ % -o %< && %<"
+    exec "!g++ % -o main && main"
   endif
 endfunc
 ]]

@@ -24,20 +24,27 @@
   "explain in comment type 1": {
     "prefix": "ec",
     "body": [
-      "/*",
-      "* $0",
-      "*/"
+      "/* $0 */"
     ],
     "description": "Explain in comment type 1"
   },
   "explain in comment type 2": {
     "prefix": "ecc",
     "body": [
+      "/*",
+      "* $0",
+      "*/"
+    ],
+    "description": "Explain in comment type 2"
+  },
+  "explain in comment type 3": {
+    "prefix": "eccc",
+    "body": [
       "/*****************************************************************************",
       "* $0",
       "*****************************************************************************/"
     ],
-    "description": "Explain in comment type 2"
+    "description": "Explain in comment type 3"
   }
 }
 
