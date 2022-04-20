@@ -1,5 +1,5 @@
 local Plug = vim.fn['plug#']
-vim.call('plug#begin', 'C:/Users/12048/AppData/Local/nvim/plugged')
+vim.call('plug#begin', 'C:/Users/admin/AppData/Local/nvim/plugged')
 
 -- new
 -- plugins using lua

@@ -1,5 +1,5 @@
 vim.g.dashboard_default_executive = 'fzf'
--- vim.g.dashboard_custom_footer = {'Have fun and have a nice day!'}
+vim.g.dashboard_custom_footer = {'Have fun and have a nice day!'}
 -- vim.g.dashboard_session_directory = '~'
 
 vim.g.dashboard_custom_section = {

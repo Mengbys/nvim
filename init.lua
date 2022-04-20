@@ -48,6 +48,6 @@ vim.g.XkbSwitchEnabled = 1
 vim.g.XkbSwitchLib = 'D:/Neovim/bin/libxkbswitch64.dll' 
 vim.g.XkbSwitchNLayout = 'us'
 vim.g.XkbSwitchILayout = 'cn'
-vim.g.airline_detect_iminsert = 0
+vim.g["airline#extensions#xkblayout#enabled"] = 0
 
 

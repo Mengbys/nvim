@@ -1,5 +1,6 @@
 vim.api.nvim_set_keymap('n','<leader>n',':NvimTreeToggle<CR>',{noremap=true,silent=true})
-vim.g.nvim_tree_quit_on_open = 1
+-- quit on open option has move to setup
+-- vim.g.nvim_tree_quit_on_open = 1
 vim.g.nvim_tree_icons = {
   git = {
     unstaged = "★",
@@ -54,5 +55,10 @@ require'nvim-tree'.setup {
       custom_only = false,
       list = {}
     }
+  },
+  actions = {
+      open_file = {
+          quit_on_open = true
+      }
   }
 }
