@@ -6,7 +6,9 @@ require('plugins')
 require('keymappings')
 require('functions')
 require('colorscheme')
-require('plugin_airline')
+-- require('plugin_airline')
+require('plugin_lualine')
+require('plugin_bufferline')
 require('plugin_lspconfig')
 require('plugin_nvim_cmp')
 require('plugin_nvim_tree')
@@ -17,6 +19,8 @@ require('plugin_neoscroll')
 require('plugin_dashboard')
 require('plugin_tabular')
 require('plugin_goyo')
+require('plugin_fzf_vim')
+require('plugin_fterm')
 
 -- some plugin settings
 -- auto-pairs
@@ -31,11 +35,6 @@ vim.g.clever_f_across_no_line=1
 -- vim.g.UltiSnipsJumpBackwardTrigger = "<c-z>"
 -- vim.g.UltiSnipsSnippetDirectories  = {"UltiSnips", "mycoolsnippets"}
 
--- fzf
-vim.g.fzf_buffers_jump = 1
-vim.g.fzf_preview_window = {'right:50%:hidden','ctrl-/'}
--- vim.g.fzf_preview_window = {}
-
 -- vsnip
 vim.g.vsnip_snippet_dir = 'C:/Users/12048/AppData/Local/nvim/vsnip'
 
@@ -49,5 +48,3 @@ vim.g.XkbSwitchLib = 'D:/Neovim/bin/libxkbswitch64.dll'
 vim.g.XkbSwitchNLayout = 'us'
 vim.g.XkbSwitchILayout = 'cn'
 vim.g["airline#extensions#xkblayout#enabled"] = 0
-
-

@@ -2,45 +2,53 @@
 local cmp = require'cmp'
 
 cmp.setup({
-    snippet = {
-      expand = function(args)
-        vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
-        -- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
-      end,
-    },
-    sources = {
-      { name = 'vsnip' },
-      -- { name = 'ultisnips' },
-      { name = 'nvim_lsp' },
-      { name = 'path' },
-    },
-    mapping = {
-      ['<Tab>'] = cmp.mapping(cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),{'i','c'}),
-      ['<S-Tab>'] = cmp.mapping(cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),{'i','c'}),
-      ['<C-x>'] = cmp.mapping.confirm({
-          behavior = cmp.ConfirmBehavior.Replace,
-          select = true,
-        }),
-      ['<C-d>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
-      ['<C-u>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
-    }
-  })
+  snippet = {
+    expand = function(args)
+      vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
+      -- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
+    end,
+  },
+  sources = {
+    { name = 'vsnip' },
+    -- { name = 'ultisnips' },
+    { name = 'nvim_lsp' },
+    { name = 'path' },
+  },
+  mapping = {
+    ['<Tab>'] = cmp.mapping(cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),{'i','c'}),
+    ['<S-Tab>'] = cmp.mapping(cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Insert }),{'i','c'}),
+    ['<C-x>'] = cmp.mapping.confirm({
+      behavior = cmp.ConfirmBehavior.Replace,
+      select = true,
+    }),
+    ['<C-u>'] = cmp.mapping(cmp.mapping.scroll_docs(-4),{'i','c'}),
+    ['<C-d>'] = cmp.mapping(cmp.mapping.scroll_docs(4),{'i','c'}),
+  },
+  -- window = {
+  --   completion = {
+  --     border = 'shadow'
+  --   },
+  --   documentation = {
+  --     border = 'shadow'
+  --   }
+  -- }
+})
 
 -- Use buffer source for `/`.
 cmp.setup.cmdline('/', {
-    sources = {
-      { name = 'buffer' }
-    }
-  })
+  sources = {
+    { name = 'buffer' }
+  }
+})
 
 -- Use cmdline & path source for ':'.
 cmp.setup.cmdline(':', {
-    sources = cmp.config.sources({
-        { name = 'path' }
-      }, {
-        { name = 'cmdline' }
-      })
-  })
+  sources = cmp.config.sources({
+    { name = 'path' }
+  }, {
+      { name = 'cmdline' }
+    })
+})
 
 
 -- Setup lspconfig.

@@ -1,5 +1,5 @@
 local Plug = vim.fn['plug#']
-vim.call('plug#begin', 'C:/Users/admin/AppData/Local/nvim/plugged')
+vim.call('plug#begin', 'C:/Users/12048/AppData/Local/nvim/plugged')
 
 -- new
 -- plugins using lua
@@ -20,10 +20,15 @@ Plug 'karb94/neoscroll.nvim'
 Plug 'glepnir/dashboard-nvim'
 Plug('nvim-treesitter/nvim-treesitter', {['do']=vim.fn[':TSUpdate']})
 Plug 'ellisonleao/glow.nvim'
+Plug 'numToStr/FTerm.nvim'
+-- Plug 'akinsho/toggleterm.nvim'
+Plug 'nvim-lualine/lualine.nvim'
+Plug 'akinsho/bufferline.nvim'
 
 -- new find engine
 Plug('junegunn/fzf', { ['do'] = vim.fn['fzf#install'] })
 Plug 'junegunn/fzf.vim'
+-- linux, macos can use
 -- Plug 'ibhagwan/fzf-lua'
 
 -- Plug 'mhinz/vim-startify'
@@ -32,8 +37,8 @@ Plug 'overcache/NeoSolarized'
 Plug 'pineapplegiant/spaceduck'
 Plug 'liuchengxu/space-vim-dark'
 Plug 'folke/tokyonight.nvim'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+-- Plug 'vim-airline/vim-airline'
+-- Plug 'vim-airline/vim-airline-themes'
 -- Plug 'ryanoasis/vim-devicons'
 -- Plug 'preservim/nerdtree'
 -- Plug 'tiagofumo/vim-nerdtree-syntax-highlight'

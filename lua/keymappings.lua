@@ -25,13 +25,13 @@ vim.api.nvim_set_keymap('n' , '<leader>cd'         , ':cd %:p:h<cr>' , {noremap=
 
 -- dashboard
 vim.api.nvim_set_keymap('n' , '<leader>h'  , ':Dashboard<cr>'            , {noremap=true , silent=true})
-vim.api.nvim_set_keymap('n' , '<leader>fm' , ':DashboardFindHistory<CR>' , {noremap=true , silent=true})
-vim.api.nvim_set_keymap('n' , '<leader>ff' , ':DashboardFindFile<CR>'    , {noremap=true , silent=true})
+-- vim.api.nvim_set_keymap('n' , '<leader>fm' , ':DashboardFindHistory<CR>' , {noremap=true , silent=true})
+-- vim.api.nvim_set_keymap('n' , '<leader>ff' , ':DashboardFindFile<CR>'    , {noremap=true , silent=true})
 
 
 -- fzf
--- vim.api.nvim_set_keymap('n','<leader>fm',':History<CR>',{noremap=true,silent=true})
--- vim.api.nvim_set_keymap('n','<leader>ff',':Files<CR>',{noremap=true,silent=true})
+vim.api.nvim_set_keymap('n','<leader>fm',':History<CR>',{noremap=true,silent=true})
+vim.api.nvim_set_keymap('n','<leader>ff',':Files<CR>',{noremap=true,silent=true})
 vim.api.nvim_set_keymap('n','<leader>fb',':Buffers<cr>',{noremap=true,silent=true})
 
 
