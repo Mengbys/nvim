@@ -1,0 +1,3 @@
+1. nvim-cmp命令补全，如何不显示“variable”？
+2. nvim-cmp如何补全已经输入过的单词？
+3. lua lsp sumneko加载慢的问题如何解决？

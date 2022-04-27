@@ -44,7 +44,7 @@ vim.api.nvim_set_keymap('n','gl',':Glow<CR>',{noremap=true,silent=true})
 
 -- vim-xkbswitch
 vim.g.XkbSwitchEnabled = 1
-vim.g.XkbSwitchLib = 'D:/Neovim/bin/libxkbswitch64.dll' 
+vim.g.XkbSwitchLib = 'D:/Neovim/bin/libxkbswitch64.dll'
 vim.g.XkbSwitchNLayout = 'us'
 vim.g.XkbSwitchILayout = 'cn'
 vim.g["airline#extensions#xkblayout#enabled"] = 0

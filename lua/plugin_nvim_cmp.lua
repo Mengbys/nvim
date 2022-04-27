@@ -10,9 +10,9 @@ cmp.setup({
   },
   sources = {
     { name = 'vsnip' },
-    -- { name = 'ultisnips' },
     { name = 'nvim_lsp' },
     { name = 'path' },
+    { name = 'buffer' },
   },
   mapping = {
     ['<Tab>'] = cmp.mapping(cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Insert }),{'i','c'}),
@@ -43,13 +43,23 @@ cmp.setup.cmdline('/', {
 
 -- Use cmdline & path source for ':'.
 cmp.setup.cmdline(':', {
-  sources = cmp.config.sources({
-    { name = 'path' }
-  }, {
-      { name = 'cmdline' }
-    })
+  sources = {
+    {name = 'path'},
+    -- Do not show completion for words starting with '!'
+    {name = 'cmdline', keyword_pattern = [[\!\@<!\w*]]},
+  }
 })
 
+-- Setup lspkind
+-- local lspkind = require('lspkind')
+-- cmp.setup {
+--   formatting = {
+--     format = lspkind.cmp_format({
+--       mode = 'symbol_text', -- show only symbol annotations
+--       maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
+--     })
+--   }
+-- }
 
 -- Setup lspconfig.
 local nvim_lsp = require('lspconfig')
@@ -78,17 +88,52 @@ end
 
 -- Setup lspconfig.
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+-- python lsp pyright
 require'lspconfig'.pyright.setup {
   capabilities = capabilities,
   on_attach = on_attach
 }
+-- c family lsp clangd
 require'lspconfig'.clangd.setup {
   capabilities = capabilities,
   on_attach = on_attach
 }
+-- verilog lsp svls
 require'lspconfig'.svls.setup {
   capabilities = capabilities,
   on_attach = on_attach,
   root_dir = nvim_lsp.util.root_pattern('.svls.toml'),
 }
+-- lua lsp sumneko
+local runtime_path = vim.split(package.path, ';')
+table.insert(runtime_path, "lua/?.lua")
+table.insert(runtime_path, "lua/?/init.lua")
 
+require'lspconfig'.sumneko_lua.setup {
+  settings = {
+    Lua = {
+      runtime = {
+        -- Tell the language server which version of Lua you're using (most likely LuaJIT in the case of Neovim)
+        version = 'LuaJIT',
+        -- Setup your lua path
+        path = runtime_path,
+      },
+      diagnostics = {
+        -- Get the language server to recognize the `vim` global
+        globals = {'vim'},
+      },
+      workspace = {
+        -- Make the server aware of Neovim runtime files
+        library = vim.api.nvim_get_runtime_file("", true),
+      },
+      -- Do not send telemetry data containing a randomized but unique identifier
+      telemetry = {
+        enable = false,
+      },
+      -- enable snippet
+      completion = {
+        callSnippet = 'Replace'
+      }
+    },
+  },
+}
