@@ -1,8 +1,9 @@
 -- When you change to other platform, you need to change
 -- the path setting in "init.lua, settings.lua, plugins.lua".
 
-require('settings')
 require('plugins')
+require('impatient')
+require('settings')
 require('keymappings')
 require('functions')
 require('colorscheme')
@@ -21,6 +22,10 @@ require('plugin_tabular')
 require('plugin_goyo')
 require('plugin_fzf_vim')
 require('plugin_fterm')
+-- require('plugin_alpha')
+
+-- re: setting
+vim.o.laststatus = 3
 
 -- some plugin settings
 -- auto-pairs

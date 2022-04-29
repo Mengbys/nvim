@@ -3,20 +3,23 @@ let s:so_save = &g:so | let s:siso_save = &g:siso | setg so=0 siso=0 | setl so=-
 let v:this_session=expand("<sfile>:p")
 silent only
 silent tabonly
-cd ~
+cd ~/AppData/Local/nvim
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 let s:shortmess_save = &shortmess
 set shortmess=aoO
-badd +1 ~/AppData/Local/nvim/init.lua
-badd +39 ~/AppData/Local/nvim/lua/settings.lua
-badd +1 main.cpp
+badd +175 lua/plugin_lualine.lua
+badd +1 lua/settings.lua
+badd +1 lua/plugin_bufferline.lua
+badd +1 init.lua
+badd +28 lua/plugins.lua
+badd +11 lua/colorscheme.lua
 argglobal
 %argdel
-edit main.cpp
+edit init.lua
 argglobal
-balt ~/AppData/Local/nvim/lua/settings.lua
+balt lua/plugin_bufferline.lua
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}

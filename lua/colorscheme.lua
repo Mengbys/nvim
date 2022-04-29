@@ -7,11 +7,11 @@ function! Patch_colors()
     hi LspDiagnosticsDefaultWarning guifg=orange
     hi link mkdHeading htmlH1
     hi DashboardHeader guifg=#ce6f8f
+    hi BufferLineIndicatorSelected guifg=#51afef
+    " hi BufferLineFill guifg=#202328 guibg=#202328
 endfunction
 
 autocmd! Colorscheme * call Patch_colors()
-]]) 
+]])
 vim.cmd[[colorscheme tokyonight]]
-vim.g.airline_theme='atomic'
-    
 

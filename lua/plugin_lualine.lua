@@ -121,7 +121,8 @@ ins_left {
 ins_left {
   -- mode component
   function()
-    return ''
+    -- return ''
+    return '😈'
   end,
   color = function()
     -- auto change color according to neovims mode
@@ -170,12 +171,15 @@ ins_left { 'progress', color = { fg = colors.fg, gui = 'bold' } }
 
 ins_left {
   'diagnostics',
+  -- sources = { 'nvim_diagnostic' },
   sources = { 'nvim_diagnostic' },
-  symbols = { error = ' ', warn = ' ', info = ' ' },
+  -- symbols = { error = ' ', warn = ' ', info = ' ' },
+  symbols = { error = '🚨 ', warn = '🚧 ', info = '💭 ', hint = '💡 ' },
   diagnostics_color = {
     color_error = { fg = colors.red },
     color_warn = { fg = colors.yellow },
     color_info = { fg = colors.cyan },
+    color_hint = { fg = colors.cyan },
   },
 }
 
@@ -204,7 +208,8 @@ ins_left {
     end
     return msg
   end,
-  icon = ' LSP:',
+  -- icon = ' LSP:',
+  icon = '🔧 LSP:',
   color = { fg = '#ffffff', gui = 'bold' },
 }
 
@@ -226,6 +231,8 @@ ins_right {
 ins_right {
   'branch',
   icon = '',
+  -- icon = '',
+  -- icon = '',
   color = { fg = colors.violet, gui = 'bold' },
 }
 
@@ -233,6 +240,8 @@ ins_right {
   'diff',
   -- Is it me or the symbol for modified us really weird
   symbols = { added = ' ', modified = '柳 ', removed = ' ' },
+  -- symbols = { added = ' ', modified = ' ', removed = ' ' },
+  -- symbols = { added = '🥝 ', modified = '🍊 ', removed = '🍓 ' },
   diff_color = {
     added = { fg = colors.green },
     modified = { fg = colors.orange },

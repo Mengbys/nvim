@@ -20,13 +20,15 @@ Plug 'hrsh7th/vim-vsnip'
 -- Plug 'hrsh7th/cmp-omni'
 Plug 'rafamadriz/friendly-snippets'
 Plug 'karb94/neoscroll.nvim'
-Plug 'glepnir/dashboard-nvim'
 Plug('nvim-treesitter/nvim-treesitter', {['do']=vim.fn[':TSUpdate']})
 Plug 'ellisonleao/glow.nvim'
 Plug 'numToStr/FTerm.nvim'
 -- Plug 'akinsho/toggleterm.nvim'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'akinsho/bufferline.nvim'
+Plug 'lewis6991/impatient.nvim'
+-- Plug 'goolord/alpha-nvim'
+
 
 -- new find engine
 Plug('junegunn/fzf', { ['do'] = vim.fn['fzf#install'] })
@@ -35,6 +37,7 @@ Plug 'junegunn/fzf.vim'
 -- Plug 'ibhagwan/fzf-lua'
 
 -- Plug 'mhinz/vim-startify'
+Plug 'glepnir/dashboard-nvim'
 Plug 'cocopon/iceberg.vim'
 Plug 'overcache/NeoSolarized'
 Plug 'pineapplegiant/spaceduck'
