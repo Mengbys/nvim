@@ -4,7 +4,7 @@ require("bufferline").setup{
     numbers = 'buffer_id',
     diagnostics = 'nvim_lsp',
     separator_style = 'thin',
-    close_icon = "💯",
+    close_icon = "🚀",
     indicator_icon = '▏'
   },
   highlights = {
