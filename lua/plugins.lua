@@ -33,7 +33,6 @@ Plug 'lewis6991/impatient.nvim'
 -- new find engine
 Plug('junegunn/fzf', { ['do'] = vim.fn['fzf#install'] })
 Plug 'junegunn/fzf.vim'
--- linux, macos can use
 -- Plug 'ibhagwan/fzf-lua'
 
 -- Plug 'mhinz/vim-startify'
@@ -66,4 +65,5 @@ Plug 'dstein64/vim-startuptime'
 -- Plug 'sheerun/vim-polyglot'
 Plug('iamcco/markdown-preview.nvim', { ['do'] = vim.fn['mkdp#util#install'], ['for'] = {'markdown', 'vim-plug'} })
 Plug 'lyokha/vim-xkbswitch'
+-- Plug 'brglng/vim-im-select'
 vim.call('plug#end')
