@@ -1,3 +1,31 @@
+local kind_icons = {
+  Text = "",
+  Method = "",
+  Function = "",
+  Constructor = "",
+  Field = "",
+  Variable = "",
+  Class = "ﴯ",
+  Interface = "",
+  Module = "",
+  Property = "ﰠ",
+  Unit = "",
+  Value = "",
+  Enum = "",
+  Keyword = "",
+  Snippet = "",
+  Color = "",
+  File = "",
+  Reference = "",
+  Folder = "",
+  EnumMember = "",
+  Constant = "",
+  Struct = "",
+  Event = "",
+  Operator = "",
+  TypeParameter = ""
+}
+
 -- Setup nvim-cmp.
 local cmp = require'cmp'
 
@@ -24,6 +52,12 @@ cmp.setup({
     ['<C-u>'] = cmp.mapping(cmp.mapping.scroll_docs(-4),{'i','c'}),
     ['<C-d>'] = cmp.mapping(cmp.mapping.scroll_docs(4),{'i','c'}),
   },
+  formatting = {
+    format = function(_, vim_item)
+      vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind)
+      return vim_item
+    end
+  },
   -- window = {
   --   completion = {
   --     border = 'shadow'
@@ -47,7 +81,13 @@ cmp.setup.cmdline(':', {
     {name = 'path'},
     -- Do not show completion for words starting with '!'
     {name = 'cmdline', keyword_pattern = [[\!\@<!\w*]]},
-  }
+  },
+  formatting = {
+    format = function(entry, vim_item)
+      vim_item.kind = ' cmd'
+      return vim_item
+    end
+  },
 })
 
 -- Setup lspkind

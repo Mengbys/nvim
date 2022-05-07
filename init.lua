@@ -53,3 +53,6 @@ vim.g.XkbSwitchLib = 'D:/Neovim/bin/libxkbswitch64.dll'
 vim.g.XkbSwitchNLayout = 'us'
 vim.g.XkbSwitchILayout = 'cn'
 vim.g["airline#extensions#xkblayout#enabled"] = 0
+
+-- markdown preview
+-- vim.g.mkdp_browser = 'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe'
