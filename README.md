@@ -55,7 +55,7 @@ would like to use the time to coding!
 | cs'"                    | change '' to "" (can extend)         |
 
 ## Other Shortcuts
-(under construction)
+🚧 under construction 🚧
 
 ## Some different plugins installed in my Neovim
 + [symbols-outline.nvim](https://github.com/simrat39/symbols-outline.nvim)
@@ -64,4 +64,17 @@ would like to use the time to coding!
 + [nvim-tree.lua](https://github.com/kyazdani42/nvim-tree.lua)
 
 - - -
+#### Dashboard
 ![screenshot](https://github.com/Mengbys/nvim/blob/main/images/1.png)
+#### File explorer
+![screenshot](https://github.com/Mengbys/nvim/blob/main/images/2.png)
+#### Symbols outline
+![screenshot](https://github.com/Mengbys/nvim/blob/main/images/3.png)
+#### Fuzzy finder
+![screenshot](https://github.com/Mengbys/nvim/blob/main/images/4.png)
+#### Write room
+![screenshot](https://github.com/Mengbys/nvim/blob/main/images/5.png)
+#### Markdown previewer
+![screenshot](https://github.com/Mengbys/nvim/blob/main/images/6.png)
+#### Terminal
+![screenshot](https://github.com/Mengbys/nvim/blob/main/images/7.png)
