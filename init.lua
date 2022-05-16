@@ -21,6 +21,7 @@ require('plugin_dashboard')
 require('plugin_tabular')
 require('plugin_goyo')
 require('plugin_fzf_vim')
+-- require('plugin_fzf_lua')
 require('plugin_fterm')
 -- require('plugin_alpha')
 
