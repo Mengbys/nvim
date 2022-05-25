@@ -1,7 +1,7 @@
 # This is my configuration of neovim with lua
-Why transfer to Neovim from Vim? Because my Vim using YouCompleteme and Tagbar
-is unbearablly slow in my laptop. Especially when I change buffer with CTRL+n
-and CTRL+p. Maybe it is because my laptop is trash?
+Why transfer to Neovim from Vim? Because my Vim using YouCompleteMe and Tagbar
+is unbearablly slow in my laptop. Especially when I change buffer with `CTRL+n`
+and `CTRL+p`. Maybe it is because my laptop is trash?
 
 I am looking for a minimal setting for my vim editor. I need it to response
 quicklly. Now it is a hard work for me.
@@ -9,7 +9,8 @@ quicklly. Now it is a hard work for me.
 I don't want to waste too much time to configure my Vim/Neovim like before. I
 would like to use the time to coding!
 
-## Most Used Shortcut
+## Basic Shortcut
+Refer from `keymappings.lua`.  
 | shortcut                | function                             |
 | :-:                     | :-:                                  |
 | ,                       | leader key                           |
@@ -25,43 +26,104 @@ would like to use the time to coding!
 | ,,P                     | paste clipboard front                |
 | ,s                      | save to file                         |
 | ,cd                     | move CWD to current file's directory |
-| ,h                      | open home page                       |
-| ,fm                     | find mru file                        |
-| ,ff                     | find file under CWD                  |
-| ,fb                     | find buffer                          |
-| ,/x                     | align by x                           |
-| ,///                    | align by '//'                        |
-| gc+motion               | comment the field moved              |
-| gcc                     | comment a line                       |
-| gcap                    | comment a block                      |
-| gcu                     | remove comment                       |
-| / or ?                  | enter find mode                      |
-| ;w                      | easymotion in word head              |
-| ;e                      | easymotion in word tail              |
-| ;f                      | easymotion in specific char          |
-| ;j                      | easymotion in line                   |
-| ;;w                     | easymotion forward in word head      |
-| ;;b                     | easymotion backward in word head     |
-| ;;e                     | easymotion forward in word tail      |
-| gd                      | jump to declaration                  |
-| gf                      | jump to definition                   |
-| gi                      | jump to implementation               |
-| [/]d                    | jump to previous/next error          |
-| ALT+b                   | back insert bracket                  |
-| ALT+e                   | put the content behind into brackets |
-| ALT+n                   | jump to next bracket                 |
-| ds'                     | delete '' (can extend)               |
-| ysiw'                   | add '' arround word (can extend)     |
-| cs'"                    | change '' to "" (can extend)         |
 
-## Other Shortcuts
-🚧 under construction 🚧
+## Plugin Shortcuts
+Refer from `keymappings.lua`, `plugin_*.lua`, `init.lua`.  
 
-## Some different plugins installed in my Neovim
-+ [symbols-outline.nvim](https://github.com/simrat39/symbols-outline.nvim)
-+ [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
-+ [neoscroll.nvim](https://github.com/karb94/neoscroll.nvim)
-+ [nvim-tree.lua](https://github.com/kyazdani42/nvim-tree.lua)
+### Dashboard(dashboard-nvim)
+| shortcut | function       |
+| :-:      | :-:            |
+| ,h       | open home page |
+### File Explorer(nvim-tree.lua)
+| shortcut | function         |
+| :-:      | :-:              |
+| ,n       | toggle file tree |
+### Symbol Outline(symbols-outline.nvim)
+| shortcut | function              |
+| :-:      | :-:                   |
+| ,t       | toggle symbol outline |
+### Fuzzy Finder(fzf.vim/fzf.lua)
+| shortcut | function            |
+| :-:      | :-:                 |
+| ,fm      | find mru file       |
+| ,ff      | find file under CWD |
+| ,fb      | find buffer         |
+### Text Align(tabular)
+| shortcut | function               |
+| :-:      | :-:                    |
+| ,/x      | align by character `x` |
+| ,///     | align by `//`          |
+### Easymotion(vim-easymotion)
+| shortcut | function                         |
+| :-:      | :-:                              |
+| / or ?   | enter find mode                  |
+| ;w       | easymotion in word head          |
+| ;e       | easymotion in word tail          |
+| ;f       | easymotion in specific char      |
+| ;j       | easymotion in line               |
+| ;;w      | easymotion forward in word head  |
+| ;;b      | easymotion backward in word head |
+| ;;e      | easymotion forward in word tail  |
+### Commentary(vim-commentary)
+| shortcut  | function                |
+| :-:       | :-:                     |
+| gc+motion | comment the field moved |
+| gcc       | comment a line          |
+| gcap      | comment a block         |
+| gcu       | remove comment          |
+### Surround(vim-surround)
+| shortcut | function                         |
+| :-:      | :-:                              |
+| ds'      | delete '' (can extend)           |
+| ysiw'    | add '' arround word (can extend) |
+| cs'"     | change '' to "" (can extend)     |
+### Auto-pairs(auto-pairs)
+| shortcut | function                             |
+| :-:      | :-:                                  |
+| ALT+b    | back insert bracket                  |
+| ALT+e    | put the content behind into brackets |
+| ALT+n    | jump to next bracket                 |
+### Code Reference(nvim-cmp)
+| shortcut | function                              |
+| :-:      | :-:                                   |
+| gd       | jump to declaration                   |
+| gf       | jump to definition                    |
+| gi       | jump to implementation                |
+| gr       | jump to reference                     |
+| [/]d     | jump to previous/next error           |
+| K        | open a hover window for documentation |
+### Snippet(vim-vsnip)
+| shortcut | function                    |
+| :-:      | :-:                         |
+| CTRL+x   | snippet expand              |
+| CTRL+b   | jump to next snippet region |
+| CTRL+l   | <unknown>                   |
+### glow(glow.vim)
+| shortcut | function                    |
+| :-:      | :-:                         |
+| gl       | use glow to preview md file |
+### goyo(goyo.vim) 
+| shortcut | function                                     |
+| :-:      | :-:                                          |
+| gy       | toggle a write room for md file and txt file |
+### Terminal(FTerm.nvim)
+| shortcut | function        |
+| :-:      | :-:             |
+| CTRL+\\  | toggle terminal |
+### Region Selection(vim-expand-region)
+| shortcut | function      |
+| :-:      | :-:           |
+| +        | expand region |
+### Function Shortcuts
+| shortcut | function                                                    |
+| :-:      | :-:                                                         |
+| F2       | code formattion for c/cpp, python                           |
+| F5       | compile c/cpp file; run python file; preview md file on web |
+| F6       | run binary file come from c/cpp                             |
+| F8       | compile and run c/cpp file                                  |
+
+## Plugin List
+🚧Under Construction.🚧
 
 ## Screenshots
 #### Dashboard
