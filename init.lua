@@ -34,7 +34,7 @@ vim.g.AutoPairsFlyMode=1
 vim.g.clever_f_across_no_line=1
 
 -- vsnip
-vim.g.vsnip_snippet_dir = 'C:/Users/12048/AppData/Local/nvim/vsnip'
+vim.g.vsnip_snippet_dir = '~/AppData/Local/nvim/vsnip'
 
 -- glow
 vim.g.glow_binary_path='D:/glow/'
