@@ -60,8 +60,13 @@ vim.api.nvim_create_autocmd('FileType', {
 vim.api.nvim_create_autocmd('FileType', {
   pattern='dashboard',
   callback=function()
-    vim.api.nvim_buf_set_keymap(0,'n','m',':History<CR>',{noremap=true,silent=true})
-    vim.api.nvim_buf_set_keymap(0,'n','f',':Files<CR>',{noremap=true,silent=true})
+    if (vim.loop.os_uname().sysname == 'Windows_NT') then
+      vim.api.nvim_buf_set_keymap(0,'n','m',':History<CR>',{noremap=true,silent=true})
+      vim.api.nvim_buf_set_keymap(0,'n','f',':Files<CR>',{noremap=true,silent=true})
+    elseif (vim.loop.os_uname().sysname == 'Linux') then
+      vim.api.nvim_buf_set_keymap(0,'n','m',':FzfLua oldfiles<CR>',{noremap=true,silent=true})
+      vim.api.nvim_buf_set_keymap(0,'n','f',':FzfLua files<CR>',{noremap=true,silent=true})
+    end
     vim.api.nvim_buf_set_keymap(0,'n','q',':exit<CR>',{noremap=true,silent=true})
     vim.api.nvim_buf_set_keymap(0,'n','e',':ene<CR>',{noremap=true,silent=true})
     vim.api.nvim_buf_set_keymap(0,'n','l',':LS<CR>',{noremap=true,silent=true})
