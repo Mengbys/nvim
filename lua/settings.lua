@@ -35,21 +35,23 @@ vim.o.termguicolors           = true
 vim.o.scrolloff               = 5
 vim.o.mouse                   = 'a'
 vim.g.loaded_python_provider  = 0
-vim.g.python3_host_skip_check = 1
-vim.g.python3_host_prog       = 'D:\\python39\\python.exe'
+if vim.fn.has('win32') then
+  vim.g.python3_host_skip_check = 1
+  vim.g.python3_host_prog       = 'D:/python39/python.exe'
+end
 
 -- # other autocommands and commands
 -- ## autocmd writed in lua
 vim.api.nvim_create_autocmd('FileType', {
   pattern='vim-plug,startuptime',
-  callback=function(args)
+  callback=function()
     vim.api.nvim_buf_set_keymap(0,'n','q',':q!<CR>',{noremap=true,silent=true})
   end
 })
 
 vim.api.nvim_create_autocmd('FileType', {
   pattern='help',
-  callback=function(args)
+  callback=function()
     vim.api.nvim_buf_set_keymap(0,'n','q',':bd!<CR>',{noremap=true, silent=true})
   end
 })
@@ -57,7 +59,7 @@ vim.api.nvim_create_autocmd('FileType', {
 -- dashboard
 vim.api.nvim_create_autocmd('FileType', {
   pattern='dashboard',
-  callback=function(args)
+  callback=function()
     vim.api.nvim_buf_set_keymap(0,'n','m',':History<CR>',{noremap=true,silent=true})
     vim.api.nvim_buf_set_keymap(0,'n','f',':Files<CR>',{noremap=true,silent=true})
     vim.api.nvim_buf_set_keymap(0,'n','q',':exit<CR>',{noremap=true,silent=true})
@@ -69,7 +71,7 @@ vim.api.nvim_create_autocmd('FileType', {
 -- file type according indentation
 vim.api.nvim_create_autocmd('FileType', {
   pattern='vim,sh,lua,yaml',
-  callback=function(args)
+  callback=function()
     vim.bo.tabstop=2
     vim.bo.shiftwidth=2
     vim.bo.softtabstop=2
@@ -86,8 +88,14 @@ autocmd BufReadPost *
 
 " Session save and load
 set sessionoptions-=blank
-command QS mks! ~\AppData\Local\nvim\tmp\session0.vim | wqa
-command LS so ~\AppData\Local\nvim\tmp\session0.vim
+if has('win32')
+  command QS mks! ~/AppData/Local/nvim/tmp/session0.vim | wqa
+  command LS so ~/AppData/Local/nvim/tmp/session0.vim
+elseif has('linux')
+  command QS mks! ~/.config/nvim/tmp/session0.vim | wqa
+  command LS so ~/.config/nvim/tmp/session0.vim
+endif
+
 
 " dashboard
 " autocmd FileType dashboard set showtabline=0 | autocmd BufLeave <buffer> set showtabline=2

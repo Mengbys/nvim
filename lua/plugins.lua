@@ -1,5 +1,12 @@
+local plugins_install_dir
+if vim.fn.has('win32') then
+  plugins_install_dir = 'C:/Users/12048/AppData/Local/nvim/plugged'
+elseif vim.fn.has('linux') then
+  plugins_install_dir = '~/.config/nvim/plugged'
+end
+
 local Plug = vim.fn['plug#']
-vim.call('plug#begin', 'C:/Users/12048/AppData/Local/nvim/plugged')
+vim.call('plug#begin', plugins_install_dir)
 
 -- plugins using lua
 Plug 'kyazdani42/nvim-web-devicons'
@@ -24,8 +31,11 @@ Plug 'akinsho/bufferline.nvim'
 Plug 'lewis6991/impatient.nvim'
 
 Plug('junegunn/fzf', { ['do'] = vim.fn['fzf#install'] })
-Plug 'junegunn/fzf.vim'
--- Plug 'ibhagwan/fzf-lua'
+if vim.fn.has('win32') then
+  Plug 'junegunn/fzf.vim'
+elseif vim.fn.has('linux') then
+  Plug 'ibhagwan/fzf-lua'
+end
 
 -- Plug 'mhinz/vim-startify'
 Plug 'glepnir/dashboard-nvim'
