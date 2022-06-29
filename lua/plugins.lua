@@ -1,7 +1,7 @@
 local plugins_install_dir
-if vim.fn.has('win32') then
+if (vim.loop.os_uname().sysname == 'Windows_NT') then
   plugins_install_dir = 'C:/Users/12048/AppData/Local/nvim/plugged'
-elseif vim.fn.has('linux') then
+elseif (vim.loop.os_uname().sysname == 'Linux') then
   plugins_install_dir = '~/.config/nvim/plugged'
 end
 
@@ -31,9 +31,9 @@ Plug 'akinsho/bufferline.nvim'
 Plug 'lewis6991/impatient.nvim'
 
 Plug('junegunn/fzf', { ['do'] = vim.fn['fzf#install'] })
-if vim.fn.has('win32') then
+if (vim.loop.os_uname().sysname == 'Windows_NT') then
   Plug 'junegunn/fzf.vim'
-elseif vim.fn.has('linux') then
+elseif (vim.loop.os_uname().sysname == 'Linux') then
   Plug 'ibhagwan/fzf-lua'
 end
 

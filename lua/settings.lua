@@ -35,7 +35,7 @@ vim.o.termguicolors           = true
 vim.o.scrolloff               = 5
 vim.o.mouse                   = 'a'
 vim.g.loaded_python_provider  = 0
-if vim.fn.has('win32') then
+if (vim.loop.os_uname().sysname == 'Windows_NT') then
   vim.g.python3_host_skip_check = 1
   vim.g.python3_host_prog       = 'D:/python39/python.exe'
 end

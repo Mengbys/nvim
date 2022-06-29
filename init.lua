@@ -21,12 +21,12 @@ require('plugin_goyo')
 require('plugin_fterm')
 
 -- OS specific
-if vim.fn.has('win32') then
+if (vim.loop.os_uname().sysname == 'Windows_NT') then
   require('plugin_fzf_vim')
 
   vim.g.vsnip_snippet_dir = 'C:/Users/12048/AppData/Local/nvim/vsnip'
   vim.g.glow_binary_path = 'D:/glow/'
-elseif vim.fn.has('linux') then
+elseif (vim.loop.os_uname().sysname == 'Linux') then
   require('plugin_fzf_lua')
 
   vim.g.vsnip_snippet_dir = '~/.config/nvim/vsnip'
