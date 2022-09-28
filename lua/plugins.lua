@@ -22,7 +22,7 @@ Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
 Plug 'rafamadriz/friendly-snippets'
-Plug 'karb94/neoscroll.nvim'
+-- Plug 'karb94/neoscroll.nvim'
 Plug('nvim-treesitter/nvim-treesitter', {['do']=vim.fn[':TSUpdate']})
 Plug 'ellisonleao/glow.nvim'
 Plug 'numToStr/FTerm.nvim'
