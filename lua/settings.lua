@@ -63,7 +63,7 @@ vim.api.nvim_create_autocmd('FileType', {
     if (vim.loop.os_uname().sysname == 'Windows_NT') then
       vim.api.nvim_buf_set_keymap(0,'n','m',':History<CR>',{noremap=true,silent=true})
       vim.api.nvim_buf_set_keymap(0,'n','f',':Files<CR>',{noremap=true,silent=true})
-    elseif (vim.loop.os_uname().sysname == 'Linux') then
+    else
       vim.api.nvim_buf_set_keymap(0,'n','m',':FzfLua oldfiles<CR>',{noremap=true,silent=true})
       vim.api.nvim_buf_set_keymap(0,'n','f',':FzfLua files<CR>',{noremap=true,silent=true})
     end
@@ -96,7 +96,7 @@ set sessionoptions-=blank
 if has('win32')
   command QS mks! ~/AppData/Local/nvim/tmp/session0.vim | wqa
   command LS so ~/AppData/Local/nvim/tmp/session0.vim
-elseif has('linux')
+else
   command QS mks! ~/.config/nvim/tmp/session0.vim | wqa
   command LS so ~/.config/nvim/tmp/session0.vim
 endif

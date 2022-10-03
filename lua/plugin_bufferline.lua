@@ -5,20 +5,23 @@ require("bufferline").setup{
     diagnostics = 'nvim_lsp',
     separator_style = 'thin',
     close_icon = "🚀",
-    indicator_icon = '▏'
+    indicator = {
+      style = 'icon',
+      icon = '▏'
+    },
   },
   highlights = {
     separator_selected = {
-      -- guibg='#ffffff',
-      guifg='#51afef'
+      -- bg='#ffffff',
+      fg='#51afef'
     },
     separator_visible = {
-      -- guibg='#ffffff',
-      -- guifg='#ffffff'
+      -- bg='#ffffff',
+      -- fg='#ffffff'
     },
     separator = {
-      -- guibg='#ffffff',
-      -- guifg='#ffffff'
+      -- bg='#ffffff',
+      -- fg='#ffffff'
     },
   }
 }

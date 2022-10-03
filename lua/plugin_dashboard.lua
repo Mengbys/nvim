@@ -1,31 +1,6 @@
-vim.g.dashboard_default_executive = 'fzf'
-vim.g.dashboard_custom_footer = {'Have fun and have a nice day!'}
--- vim.g.dashboard_session_directory = '~'
+local db = require('dashboard')
 
-vim.g.dashboard_custom_section = {
-    find_history = {
-        description = {'ﭯ Recently open files                   m'},
-        command = 'DashboardFindHistory',
-    },
-    find_file = {
-        description = {' Find file                             f'},
-        command = 'DashboardFindFile',
-    },
-    load_session = {
-        description = {' Load last session                     l'},
-        command = 'LS',
-    },
-    new_file = {
-        description = {' New file                              e'},
-        command = 'enew',
-    },
-    quit = {
-        description = {' Quit                                  q'},
-        command = 'exit',
-    },
-}
-
-vim.g.dashboard_custom_header = {
+db.custom_header = {
     '',
     '',
     '',
@@ -45,3 +20,34 @@ vim.g.dashboard_custom_header = {
     '',
     '',
 }
+db.custom_footer = {
+  '',
+  'Have fun and have a nice day!'
+}
+
+db.custom_center = {
+  {icon = 'ﭯ ',
+  desc = 'Recently open files                   ',
+  shortcut = 'm',
+  action =''},
+  {icon = ' ',
+  desc = 'Find file                             ',
+  shortcut = 'f',
+  action =''},
+  {icon = ' ',
+  desc = 'Load last session                     ',
+  shortcut = 'l',
+  action =''},
+  {icon = ' ',
+  desc = 'New file                              ',
+  shortcut = 'e',
+  action =''},
+  {icon = ' ',
+  desc = 'Quit                                  ',
+  shortcut = 'q',
+  action =''},
+}
+
+db.hide_statusline = true
+db.hide_tabline = true
+db.hide_winbar = true

@@ -34,7 +34,7 @@ if (vim.loop.os_uname().sysname == 'Windows_NT') then
   vim.api.nvim_set_keymap('n' , '<leader>fm' , ':History<CR>' , {noremap=true , silent=true})
   vim.api.nvim_set_keymap('n' , '<leader>ff' , ':Files<CR>'   , {noremap=true , silent=true})
   vim.api.nvim_set_keymap('n' , '<leader>fb' , ':Buffers<cr>' , {noremap=true , silent=true})
-elseif (vim.loop.os_uname().sysname == 'Linux') then
+else
   vim.api.nvim_set_keymap('n' , '<leader>fm' , ':FzfLua oldfiles<CR>' , {noremap=true , silent=true})
   vim.api.nvim_set_keymap('n' , '<leader>ff' , ':FzfLua files<CR>'    , {noremap=true , silent=true})
   vim.api.nvim_set_keymap('n' , '<leader>fb' , ':FzfLua buffers<cr>'  , {noremap=true , silent=true})

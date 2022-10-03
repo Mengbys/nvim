@@ -1,3 +1,8 @@
+-- disable netrw at the very start
+vim.g.loaded = 1
+vim.g.loaded_netrwPlugin = 1
+
+
 -- When you change to other platform, you need to change
 -- the path setting in "init.lua, settings.lua, plugins.lua".
 require('plugins')
@@ -5,6 +10,7 @@ require('impatient')
 require('settings')
 require('keymappings')
 require('functions')
+require('plugin_tokyonight')
 require('colorscheme')
 require('plugin_lualine')
 require('plugin_bufferline')
@@ -26,7 +32,7 @@ if (vim.loop.os_uname().sysname == 'Windows_NT') then
 
   vim.g.vsnip_snippet_dir = 'C:/Users/12048/AppData/Local/nvim/vsnip'
   vim.g.glow_binary_path = 'D:/glow/'
-elseif (vim.loop.os_uname().sysname == 'Linux') then
+else
   require('plugin_fzf_lua')
 
   vim.g.vsnip_snippet_dir = '~/.config/nvim/vsnip'
