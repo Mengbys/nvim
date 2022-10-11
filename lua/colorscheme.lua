@@ -17,9 +17,12 @@ function! Patch_colors()
     hi NormalSB guibg=NONE
     hi NvimTreeNormal guibg=NONE
     hi NvimTreeNormalNC guibg=NONE
+    hi DiagnosticVirtualTextError guibg=NONE
+    hi DiagnosticVirtualTextWarn guibg=NONE
+    hi DiagnosticVirtualTextHint guibg=NONE
+    hi DiagnosticVirtualTextInfo guibg=NONE
 endfunction
 
 autocmd! Colorscheme * call Patch_colors()
 ]])
 vim.cmd[[colorscheme tokyonight]]
-
