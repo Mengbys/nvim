@@ -1,7 +1,7 @@
 Plugins_dir=""
 
 if (vim.loop.os_uname().sysname == 'Windows_NT') then
-  Plugins_dir=vim.fn.fnamemodify("~/.config/nvim/lazy/", ":p")
+  Plugins_dir=vim.fn.fnamemodify("D:/Neovim/lazy/", ":p")
 else
   Plugins_dir=vim.fn.fnamemodify("~/.config/nvim/lazy/", ":p")
 end
