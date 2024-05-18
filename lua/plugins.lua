@@ -22,10 +22,8 @@ Plug 'hrsh7th/nvim-cmp'
 Plug 'hrsh7th/cmp-vsnip'
 Plug 'hrsh7th/vim-vsnip'
 Plug 'rafamadriz/friendly-snippets'
--- Plug 'karb94/neoscroll.nvim'
 Plug('nvim-treesitter/nvim-treesitter', {['do']=vim.fn[':TSUpdate']})
-Plug 'ellisonleao/glow.nvim'
-Plug 'numToStr/FTerm.nvim'
+-- Plug 'numToStr/FTerm.nvim'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'akinsho/bufferline.nvim'
 Plug 'lewis6991/impatient.nvim'
@@ -37,7 +35,6 @@ else
   Plug 'ibhagwan/fzf-lua'
 end
 
--- Plug 'mhinz/vim-startify'
 Plug 'glepnir/dashboard-nvim'
 Plug 'cocopon/iceberg.vim'
 Plug 'overcache/NeoSolarized'
@@ -55,8 +52,5 @@ Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-line'
 Plug 'rhysd/clever-f.vim'
 Plug 'jeffkreeftmeijer/vim-numbertoggle'
-Plug 'junegunn/goyo.vim'
 Plug 'dstein64/vim-startuptime'
--- Plug 'gcmt/taboo.vim'
-Plug('iamcco/markdown-preview.nvim', { ['do'] = vim.fn['mkdp#util#install'], ['for'] = {'markdown', 'vim-plug'} })
 vim.call('plug#end')

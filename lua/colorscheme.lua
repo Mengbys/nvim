@@ -12,17 +12,16 @@ function! Patch_colors()
     hi BufferLineIndicatorSelected guifg=#51afef
     " hi BufferLineFill guifg=#202328 guibg=#202328
     " transparence
-    hi Normal guibg=NONE
-    hi NormalNC guibg=NONE
-    hi NormalSB guibg=NONE
-    hi NvimTreeNormal guibg=NONE
-    hi NvimTreeNormalNC guibg=NONE
-    hi DiagnosticVirtualTextError guibg=NONE
-    hi DiagnosticVirtualTextWarn guibg=NONE
-    hi DiagnosticVirtualTextHint guibg=NONE
-    hi DiagnosticVirtualTextInfo guibg=NONE
+    " hi Normal guibg=NONE
+    " hi NormalNC guibg=NONE
+    " hi NormalSB guibg=NONE
+    " hi NvimTreeNormal guibg=NONE
+    " hi NvimTreeNormalNC guibg=NONE
+    " hi DiagnosticVirtualTextError guibg=NONE
+    " hi DiagnosticVirtualTextWarn guibg=NONE
+    " hi DiagnosticVirtualTextHint guibg=NONE
+    " hi DiagnosticVirtualTextInfo guibg=NONE
 endfunction
 
 autocmd! Colorscheme * call Patch_colors()
 ]])
-vim.cmd[[colorscheme tokyonight]]

@@ -1,6 +1,3 @@
--- key mappings
-vim.api.nvim_set_keymap('n','<leader>t',':SymbolsOutline<cr>',{noremap=true,silent=true})
-
 require("symbols-outline").setup
 {
   opts = {

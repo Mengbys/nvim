@@ -3,11 +3,16 @@ require("bufferline").setup{
     mode = 'buffers',
     numbers = 'buffer_id',
     diagnostics = 'nvim_lsp',
-    separator_style = 'thin',
+    separator_style = {'/','/'},
+    -- separator_style = 'thin',
     close_icon = "🚀",
+    show_close_icon = true,
     indicator = {
       style = 'icon',
-      icon = '▏'
+      -- icon = '▏'
+      -- icon = '▎'
+      -- icon = '▊'
+      icon = ''
     },
   },
   highlights = {

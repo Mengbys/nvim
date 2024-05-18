@@ -1,12 +1,7 @@
-Plugins_dir=""
-
-if (vim.loop.os_uname().sysname == 'Windows_NT') then
-  Plugins_dir=vim.fn.fnamemodify("~/.config/nvim/lazy/", ":p")
-else
-  Plugins_dir=vim.fn.fnamemodify("~/.config/nvim/lazy/", ":p")
-end
-
-local lazypath=Plugins_dir .. "/lazy.nvim"
+-- `lazy.nvim`
+-- `lazy.nvim` and other the downloaded plugins store in `vim.fn.stdpath("data") .. "/lazy"` which is:
+-- `~/.local/share/nvim/lazy/`
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
 	vim.fn.system({
 		"git",
@@ -19,9 +14,8 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
+require("plugins_lazy")
 require('settings')
 require('keymappings')
 require('functions')
 require('colorscheme')
-
-require("plugins_lazy")

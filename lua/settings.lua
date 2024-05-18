@@ -1,39 +1,41 @@
-vim.o.encoding                = 'utf-8'
-vim.o.fileencoding            = 'utf-8'
-vim.o.fileencodings           = 'utf-8,ucs-bom,gb18030,gbk,gb2312,cp936'
-vim.o.tabstop                 = 4
-vim.o.softtabstop             = 4
-vim.o.shiftwidth              = 4
-vim.o.smarttab                = true
-vim.o.expandtab               = true
-vim.o.number                  = true
-vim.o.relativenumber          = true
-vim.o.cursorline              = true
-vim.o.background              = 'dark'
-vim.o.autoread                = true
-vim.o.autoindent              = true
-vim.o.smartindent             = true
-vim.o.compatible              = false
-vim.o.ignorecase              = true
-vim.o.smartcase               = true
-vim.o.incsearch               = true
-vim.o.wrap                    = true
-vim.o.undofile                = false
-vim.o.backup                  = false
-vim.o.swapfile                = false
-vim.o.hls                     = false
-vim.o.spr                     = true
-vim.o.sb                      = true
-vim.o.signcolumn              = 'number'
-vim.o.whichwrap               = '<,>,[,]'
-vim.o.laststatus              = 3
-vim.o.showtabline             = 1
-vim.o.cmdheight               = 1
-vim.o.linespace               = 0
-vim.o.wildmenu                = true
-vim.o.termguicolors           = true
-vim.o.scrolloff               = 5
-vim.o.mouse                   = 'a'
+vim.o.encoding       = 'utf-8'
+vim.o.fileencoding   = 'utf-8'
+vim.o.fileencodings  = 'utf-8,ucs-bom,gb18030,gbk,gb2312,cp936'
+vim.o.tabstop        = 4
+vim.o.softtabstop    = 4
+vim.o.shiftwidth     = 4
+vim.o.smarttab       = true
+vim.o.expandtab      = true
+vim.o.number         = true
+vim.o.relativenumber = true
+vim.o.cursorline     = true
+vim.o.background     = 'dark'
+vim.o.autoread       = true
+vim.o.autoindent     = true
+vim.o.smartindent    = true
+vim.o.compatible     = false
+vim.o.ignorecase     = true
+vim.o.smartcase      = true
+vim.o.incsearch      = true
+vim.o.wrap           = false
+vim.o.undofile       = false
+vim.o.backup         = false
+vim.o.swapfile       = false
+vim.o.hls            = true
+vim.o.spr            = true
+vim.o.sb             = true
+vim.o.signcolumn     = 'number'
+vim.o.whichwrap      = '<,>,[,]'
+vim.o.laststatus     = 3
+vim.o.showtabline    = 1
+vim.o.cmdheight      = 1
+vim.o.linespace      = 0
+vim.o.wildmenu       = true
+vim.o.termguicolors  = true
+vim.o.scrolloff      = 5
+vim.o.mouse          = 'a'
+vim.o.ruler          = false
+
 vim.g.loaded_python_provider  = 0
 if (vim.loop.os_uname().sysname == 'Windows_NT') then
   vim.g.python3_host_skip_check = 1
@@ -53,23 +55,6 @@ vim.api.nvim_create_autocmd('FileType', {
   pattern='help',
   callback=function()
     vim.api.nvim_buf_set_keymap(0,'n','q',':bd!<CR>',{noremap=true, silent=true})
-  end
-})
-
--- dashboard
-vim.api.nvim_create_autocmd('FileType', {
-  pattern='dashboard',
-  callback=function()
-    if (vim.loop.os_uname().sysname == 'Windows_NT') then
-      vim.api.nvim_buf_set_keymap(0,'n','m',':History<CR>',{noremap=true,silent=true})
-      vim.api.nvim_buf_set_keymap(0,'n','f',':Files<CR>',{noremap=true,silent=true})
-    else
-      vim.api.nvim_buf_set_keymap(0,'n','m',':FzfLua oldfiles<CR>',{noremap=true,silent=true})
-      vim.api.nvim_buf_set_keymap(0,'n','f',':FzfLua files<CR>',{noremap=true,silent=true})
-    end
-    vim.api.nvim_buf_set_keymap(0,'n','q',':exit<CR>',{noremap=true,silent=true})
-    vim.api.nvim_buf_set_keymap(0,'n','e',':ene<CR>',{noremap=true,silent=true})
-    vim.api.nvim_buf_set_keymap(0,'n','l',':LS<CR>',{noremap=true,silent=true})
   end
 })
 

@@ -32,8 +32,8 @@
     "prefix": "ecc",
     "body": [
       "/*",
-      "* $0",
-      "*/"
+      " * $0",
+      " */"
     ],
     "description": "Explain in comment type 2"
   },

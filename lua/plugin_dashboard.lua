@@ -1,53 +1,69 @@
 local db = require('dashboard')
 
-db.custom_header = {
-    '',
-    '',
-    '',
-    '',
-    '',
-    '',
-    '    ████▌█████▌█ ████████▐▀██▀    ',
-    '  ▄█████ █████▌ █ ▀██████▌█▄▄▀▄   ',
-    '  ▌███▌█ ▐███▌▌  ▄▄ ▌█▌███▐███ ▀  ',
-    ' ▐ ▐██  ▄▄▐▀█   ▐▄█▀▌█▐███▐█      ',
-    '   ███ ▌▄█▌  ▀  ▀██  ▀██████▌     ',
-    '    ▀█▌▀██▀ ▄         ███▐███     ',
-    '     ██▌             ▐███████▌    ',
-    '     ███     ▀█▀     ▐██▐███▀▌    ',
-    '     ▌█▌█▄         ▄▄████▀ ▀      ',
-    '       █▀██▄▄▄ ▄▄▀▀██▀█           ',
-    '',
-    '',
-}
-db.custom_footer = {
-  '',
-  'Have fun and have a nice day!'
-}
-
-db.custom_center = {
-  {icon = 'ﭯ ',
-  desc = 'Recently open files                   ',
-  shortcut = 'm',
-  action =''},
-  {icon = ' ',
-  desc = 'Find file                             ',
-  shortcut = 'f',
-  action =''},
-  {icon = ' ',
-  desc = 'Load last session                     ',
-  shortcut = 'l',
-  action =''},
-  {icon = ' ',
-  desc = 'New file                              ',
-  shortcut = 'e',
-  action =''},
-  {icon = ' ',
-  desc = 'Quit                                  ',
-  shortcut = 'q',
-  action =''},
-}
-
-db.hide_statusline = true
-db.hide_tabline = true
-db.hide_winbar = true
+db.setup({
+  theme = 'doom',
+  hide = {},
+  config = {
+    header = {
+      '',
+      '',
+      '',
+      '',
+      '',
+      '',
+      '    ████▌█████▌█ ████████▐▀██▀    ',
+      '  ▄█████ █████▌ █ ▀██████▌█▄▄▀▄   ',
+      '  ▌███▌█ ▐███▌▌  ▄▄ ▌█▌███▐███ ▀  ',
+      ' ▐ ▐██  ▄▄▐▀█   ▐▄█▀▌█▐███▐█      ',
+      '   ███ ▌▄█▌  ▀  ▀██  ▀██████▌     ',
+      '    ▀█▌▀██▀ ▄         ███▐███     ',
+      '     ██▌             ▐███████▌    ',
+      '     ███     ▀█▀     ▐██▐███▀▌    ',
+      '     ▌█▌█▄         ▄▄████▀ ▀      ',
+      '       █▀██▄▄▄ ▄▄▀▀██▀█           ',
+      '',
+      '',
+    }, --your header
+    center = {
+      {
+        icon = '  ',
+        desc = 'Recently open files                   ',
+        key = 'm',
+        key_format = '%s',
+        action ='FzfLua oldfiles'
+      },
+      {
+        icon = '  ',
+        desc = 'Find file                             ',
+        key = 'f',
+        key_format = '%s',
+        action ='FzfLua files'
+      },
+      {
+        icon = '  ',
+        desc = 'Restore last session                  ',
+        key = 'r',
+        key_format = '%s',
+        action ='LS'
+      },
+      {
+        icon = '  ',
+        desc = 'New file                              ',
+        key = 'e',
+        key_format = '%s',
+        action ='ene'
+      },
+      {
+        icon = '󰈆  ',
+        desc = 'Quit                                  ',
+        key = 'q',
+        key_format = '%s',
+        action ='exit'
+      },
+    },
+    footer = {
+      '',
+      'Have fun and have a nice day!'
+    }  --your footer
+  }
+})
