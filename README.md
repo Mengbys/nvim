@@ -1,3 +1,7 @@
+# I am moving to `lazy.nvim`
+
+---
+
 # This is my configuration of neovim with lua
 Why transfer to Neovim from Vim? Because my Vim using YouCompleteMe and Tagbar
 is unbearablly slow in my laptop. Especially when I change buffer with `CTRL+n`

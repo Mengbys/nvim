@@ -1,29 +1,29 @@
 local kind_icons = {
   Text = "",
-  Method = "",
-  Function = "",
-  Constructor = "",
-  Field = "",
-  Variable = "",
-  Class = "ﴯ",
+  Method = "",
+  Function = "󰊕",
+  Constructor = "",
+  Field = "",
+  Variable = "󰀫",
+  Class = "󰠱",
   Interface = "",
   Module = "",
-  Property = "ﰠ",
+  Property = "󰜢",
   Unit = "",
-  Value = "",
+  Value = "󰎠",
   Enum = "",
-  Keyword = "",
+  Keyword = "󰌋󰌋",
   Snippet = "",
-  Color = "",
-  File = "",
+  Color = "󰏘",
+  File = "󰈙",
   Reference = "",
-  Folder = "",
+  Folder = "",
   EnumMember = "",
-  Constant = "",
-  Struct = "",
-  Event = "",
-  Operator = "",
-  TypeParameter = ""
+  Constant = "󰏿",
+  Struct = "󰙅",
+  Event = "",
+  Operator = "󰆕",
+  TypeParameter = ""
 }
 
 -- Setup nvim-cmp.
@@ -33,7 +33,6 @@ cmp.setup({
   snippet = {
     expand = function(args)
       vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
-      -- vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
     end,
   },
   sources = {
@@ -58,18 +57,10 @@ cmp.setup({
       return vim_item
     end
   },
-  -- window = {
-  --   completion = {
-  --     border = 'shadow'
-  --   },
-  --   documentation = {
-  --     border = 'shadow'
-  --   }
-  -- }
 })
 
--- Use buffer source for `/`.
-cmp.setup.cmdline('/', {
+-- Use buffer source for `/` and `?`.
+cmp.setup.cmdline({ '/','?' }, {
   sources = {
     { name = 'buffer' }
   }
@@ -84,31 +75,23 @@ cmp.setup.cmdline(':', {
   },
   formatting = {
     format = function(entry, vim_item)
-      vim_item.kind = ' cmd'
+      if (vim_item.kind=="Variable") then
+        vim_item.kind = ' cmd'
+      else
+        vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind)
+      end
       return vim_item
     end
   },
 })
 
--- Setup lspkind
--- local lspkind = require('lspkind')
--- cmp.setup {
---   formatting = {
---     format = lspkind.cmp_format({
---       mode = 'symbol_text', -- show only symbol annotations
---       maxwidth = 50, -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
---     })
---   }
--- }
 
--- Setup lspconfig.
-local nvim_lsp = require('lspconfig')
+-- Set lsp keymapping.
 
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
-  local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
 
   -- Mappings.
   local opts = { noremap=true, silent=true }
@@ -127,7 +110,7 @@ local on_attach = function(client, bufnr)
 end
 
 -- Setup lspconfig.
-local capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
 -- python lsp pyright
 require'lspconfig'.pyright.setup {
   capabilities = capabilities,
@@ -137,12 +120,6 @@ require'lspconfig'.pyright.setup {
 require'lspconfig'.clangd.setup {
   capabilities = capabilities,
   on_attach = on_attach
-}
--- verilog lsp svls
-require'lspconfig'.svls.setup {
-  capabilities = capabilities,
-  on_attach = on_attach,
-  root_dir = nvim_lsp.util.root_pattern('.svls.toml'),
 }
 -- lua lsp sumneko
 local runtime_path = vim.split(package.path, ';')

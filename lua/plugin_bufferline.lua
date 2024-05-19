@@ -1,32 +1,23 @@
-require("bufferline").setup{
+local bufferline=require("bufferline")
+bufferline.setup {
   options = {
     mode = 'buffers',
-    numbers = 'buffer_id',
+    style_preset = bufferline.style_preset.default,
+    themable = false,
+    numbers = 'none',
     diagnostics = 'nvim_lsp',
-    separator_style = {'/','/'},
-    -- separator_style = 'thin',
+    -- separator_style = {'',''},
     close_icon = "🚀",
     show_close_icon = true,
     indicator = {
-      style = 'icon',
-      -- icon = '▏'
-      -- icon = '▎'
-      -- icon = '▊'
-      icon = ''
+      -- icon = '▎',
+      -- style = 'icon',
+      style='none',
     },
   },
   highlights = {
-    separator_selected = {
-      -- bg='#ffffff',
-      fg='#51afef'
-    },
-    separator_visible = {
-      -- bg='#ffffff',
-      -- fg='#ffffff'
-    },
-    separator = {
-      -- bg='#ffffff',
-      -- fg='#ffffff'
+    indicator_selected = {
+      fg = '#51afef',
     },
   }
 }

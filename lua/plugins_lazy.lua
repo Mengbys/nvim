@@ -5,7 +5,6 @@ require("lazy").setup(
     lazy=false,
     config=function()
       require("plugin_tokyonight")
-      vim.cmd[[colorscheme tokyonight]]
     end,
   },
 
@@ -82,7 +81,7 @@ require("lazy").setup(
   },
 
   {
-    'windwp/nvim-autopairs',
+    "windwp/nvim-autopairs",
     event = "InsertEnter",
     config=function()
       require("plugin_nvim_autopairs")
@@ -90,8 +89,8 @@ require("lazy").setup(
   },
 
   {
-    'neovim/nvim-lspconfig',
-    event = "InsertEnter",
+    "neovim/nvim-lspconfig",
+    lazy=false,
     config=function()
       require("plugin_nvim_lspconfig")
     end,
@@ -99,17 +98,30 @@ require("lazy").setup(
 
   {
     "hrsh7th/nvim-cmp",
-    event = "InsertEnter",
+    lazy=false,
     dependencies = {
       "hrsh7th/cmp-nvim-lsp",
       "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-path",
       "hrsh7th/cmp-cmdline",
+      "hrsh7th/cmp-vsnip",
     },
     config = function()
       require("plugin_nvim_cmp")
     end,
   },
+
+  {
+    "hrsh7th/vim-vsnip",
+    event="InsertEnter",
+    dependencies = {
+      "rafamadriz/friendly-snippets",
+    },
+    config = function()
+      vim.g.vsnip_snippet_dir=Snips_dir
+    end,
+  },
+
 },
 
 {
