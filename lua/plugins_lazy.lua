@@ -73,14 +73,6 @@ require("lazy").setup(
   },
 
   {
-    "junegunn/fzf.vim",
-    cmd={ "Files","Buffers","History" },
-    config=function()
-      require("plugin_fzf_vim")
-    end,
-  },
-
-  {
     "windwp/nvim-autopairs",
     event = "InsertEnter",
     config=function()
