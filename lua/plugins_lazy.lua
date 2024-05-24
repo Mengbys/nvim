@@ -103,6 +103,7 @@ require("lazy").setup(
     end,
   },
 
+  -- TODO: When type `s` in ps1 file, get a error.
   {
     "hrsh7th/vim-vsnip",
     event="InsertEnter",
@@ -112,6 +113,19 @@ require("lazy").setup(
     config = function()
       vim.g.vsnip_snippet_dir=Snips_dir
     end,
+  },
+
+  -- TODO:
+  -- 1. figure out how `lazy` works.
+  -- 2. add a config file for `todo-comments` plugins.
+  {
+    "folke/todo-comments.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    opts = {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    }
   },
 
 },
