@@ -24,13 +24,13 @@ bufferline.setup {
       bg = '#202328',
     },
     tab = {
-      -- fg = '#202328',
+      fg = '#636da6',
       bg = '#202328',
       bold = true,
       italic = true,
     },
     tab_selected = {
-      -- fg = '#202328',
+      fg = '#82aaff',
       bg = '#202328',
       bold = true,
       italic = true,
@@ -62,11 +62,11 @@ bufferline.setup {
       bg = '#202328',
     },
     buffer_visible = {
-      -- fg = '<colour-value-here>',
+      -- fg = '#636da6',
       bg = '#202328',
     },
     buffer_selected = {
-      -- fg = '<colour-value-here>',
+      fg = '#c8d3f5',
       bg = '#202328',
       bold = true,
       italic = true,

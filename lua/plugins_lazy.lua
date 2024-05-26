@@ -8,17 +8,21 @@ require("lazy").setup(
     end,
   },
 
-  -- TODO: Add a lua config file for this plugin.
   {
     "EdenEast/nightfox.nvim",
     lazy=false,
+    config=function()
+      require("plugin_nightfox")
+    end,
   },
 
-  -- TODO: Add a lua config file for this plugin.
   {
     "catppuccin/nvim",
     name="catppuccin",
     lazy=false,
+    config=function()
+      require("plugin_catppuccin")
+    end,
   },
 
   {
@@ -116,7 +120,7 @@ require("lazy").setup(
     end,
   },
 
-  -- TODO: When type `s` in ps1 file, get a error.
+  -- TODO: When type `s` in ps1 file, get an error.
   {
     "hrsh7th/vim-vsnip",
     event="InsertEnter",
@@ -128,44 +132,31 @@ require("lazy").setup(
     end,
   },
 
-  -- TODO:
-  -- 1. Figure out how `lazy` works.
-  -- 2. Add a config file for `todo-comments` plugin.
   {
     "folke/todo-comments.nvim",
     lazy=false,
     dependencies = { "nvim-lua/plenary.nvim" },
-    opts = {
-      -- your configuration comes here
-      -- or leave it empty to use the default settings
-      -- refer to the configuration section below
-    }
+    config = function()
+      require("plugin_todo_comments")
+    end,
   },
 
-  -- TODO: Add a lua config file for this plugin.
   {
     'numToStr/Comment.nvim',
     event="InsertEnter",
-    opts = {
-      -- add any options here
-    },
+    config = function()
+      require("plugin_comment")
+    end,
   },
 
-  -- TODO: Add a lua config file for this plugin.
   {
     'stevearc/oil.nvim',
     cmd="Oil",
     dependencies = { "nvim-tree/nvim-web-devicons" },
-    opts = {},
+    config = function()
+      require("plugin_oil")
+    end,
   },
-
-  -- TODO: Add a lua config file for this plugin.
-  {
-    'xiyaowong/transparent.nvim',
-    cmd="TransparentToggle",
-    opts = {},
-  },
-
 },
 
 {
