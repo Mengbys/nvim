@@ -8,6 +8,9 @@ function! Patch_colors()
   hi DashboardHeader guifg=#ce6f8f
 
   " transparency
+  hi Normal guibg=none
+  hi NormalNC guibg=none
+  hi NormalSB guibg=none
   hi NvimTreeNormal guibg=none
   hi NvimTreeNormalNC guibg=none
   hi NvimTreeWinSeparator guifg=grey guibg=none
