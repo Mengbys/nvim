@@ -113,22 +113,21 @@ require("lazy").setup(
       "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-path",
       "hrsh7th/cmp-cmdline",
-      "hrsh7th/cmp-vsnip",
+      "saadparwaiz1/cmp_luasnip",
     },
     config = function()
       require("plugin_nvim_cmp")
     end,
   },
 
-  -- TODO: When type `s` in ps1 file, get an error.
   {
-    "hrsh7th/vim-vsnip",
+    "L3MON4D3/LuaSnip",
+    version = "v2.3",
+    build = "make install_jsregexp",
+    dependencies = { "rafamadriz/friendly-snippets" },
     event="InsertEnter",
-    dependencies = {
-      "rafamadriz/friendly-snippets",
-    },
     config = function()
-      vim.g.vsnip_snippet_dir=Snips_dir
+      require("plugin_luasnip")
     end,
   },
 

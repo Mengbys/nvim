@@ -34,27 +34,24 @@ vim.api.nvim_set_keymap('n' , '<leader>fb' , ':FzfLua buffers<cr>'  , {noremap=t
 vim.api.nvim_set_keymap('n' , '<leader>fr' , ':FzfLua live_grep<cr>'  , {noremap=true , silent=true})
 
 
--- vsnip
-vim.cmd[[
-" Expand
-imap <expr> <C-x>   vsnip#expandable()  ? '<Plug>(vsnip-expand)'         : '<C-x>'
-smap <expr> <C-x>   vsnip#expandable()  ? '<Plug>(vsnip-expand)'         : '<C-x>'
-
-" Expand or jump
-imap <expr> <C-l>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>'
-smap <expr> <C-l>   vsnip#available(1)  ? '<Plug>(vsnip-expand-or-jump)' : '<C-l>'
-
-" Jump forward or backward
-imap <expr> <c-n>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<c-n>'
-smap <expr> <c-n>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-next)'      : '<c-n>'
-imap <expr> <c-p>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-prev)'      : '<c-p>'
-smap <expr> <c-p>   vsnip#jumpable(1)   ? '<Plug>(vsnip-jump-prev)'      : '<c-p>'
-]]
-
-
 -- nvim-tree
 vim.api.nvim_set_keymap('n','<leader>n',':NvimTreeToggle<CR>',{noremap=true,silent=true})
 
 -- symbols-outline
 vim.api.nvim_set_keymap('n','<leader>t',':SymbolsOutline<cr>',{noremap=true,silent=true})
 
+
+vim.cmd[[
+" press <Tab> to expand or jump in a snippet. These can also be mapped separately
+" via <Plug>luasnip-expand-snippet and <Plug>luasnip-jump-next.
+imap <silent><expr> <c-k> luasnip#expand_or_jumpable() ? '<Plug>luasnip-expand-or-jump' : '<c-k>' 
+" -1 for jumping backwards.
+inoremap <silent> <c-j> <cmd>lua require'luasnip'.jump(-1)<Cr>
+
+snoremap <silent> <c-l> <cmd>lua require('luasnip').jump(1)<Cr>
+snoremap <silent> <c-j> <cmd>lua require('luasnip').jump(-1)<Cr>
+
+" For changing choices in choiceNodes (not strictly necessary for a basic setup).
+imap <silent><expr> <C-E> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-E>'
+smap <silent><expr> <C-E> luasnip#choice_active() ? '<Plug>luasnip-next-choice' : '<C-E>'
+]]

@@ -3,7 +3,7 @@ let s:so_save = &g:so | let s:siso_save = &g:siso | setg so=0 siso=0 | setl so=-
 let v:this_session=expand("<sfile>:p")
 silent only
 silent tabonly
-cd ~/.config/nvim/lua
+cd ~/.config/nvim
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
@@ -13,23 +13,20 @@ if &shortmess =~ 'A'
 else
   set shortmess=aoO
 endif
-badd +4 ~/.config/nvim/init.lua
-badd +19 colorscheme.lua
-badd +152 plugins_lazy.lua
-badd +69 plugin_bufferline.lua
-badd +4 plugin_nightfox.lua
-badd +1 plugin_catppuccin.lua
-badd +3 plugin_todo_comments.lua
-badd +5 plugin_comment.lua
-badd +4 plugin_oil.lua
-badd +16 plugin_transparent.lua
-badd +6 plugin_tokyonight.lua
+badd +17 init.lua
+badd +130 lua/plugins_lazy.lua
+badd +54 lua/keymappings.lua
+badd +1 test.ps1
+badd +60 lua/plugin_nvim_cmp.lua
+badd +1 test.c
+badd +1 test.cpp
+badd +2 lua/plugin_luasnip.lua
 argglobal
 %argdel
-$argadd ~/.config/nvim/init.lua
-edit colorscheme.lua
+$argadd init.lua
+edit test.cpp
 argglobal
-balt ~/.config/nvim/init.lua
+balt lua/plugin_luasnip.lua
 setlocal fdm=manual
 setlocal fde=0
 setlocal fmr={{{,}}}
@@ -40,11 +37,11 @@ setlocal fdn=20
 setlocal fen
 silent! normal! zE
 let &fdl = &fdl
-let s:l = 19 - ((18 * winheight(0) + 20) / 40)
+let s:l = 1 - ((0 * winheight(0) + 20) / 40)
 if s:l < 1 | let s:l = 1 | endif
 keepjumps exe s:l
 normal! zt
-keepjumps 19
+keepjumps 1
 normal! 0
 tabnext 1
 if exists('s:wipebuf') && len(win_findbuf(s:wipebuf)) == 0 && getbufvar(s:wipebuf, '&buftype') isnot# 'terminal'
