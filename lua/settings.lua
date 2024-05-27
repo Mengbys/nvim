@@ -36,20 +36,7 @@ vim.o.scrolloff      = 5
 vim.o.mouse          = 'a'
 vim.o.ruler          = false
 
-vim.g.loaded_python_provider  = 0
-if (vim.loop.os_uname().sysname == 'Windows_NT') then
-  vim.g.python3_host_skip_check = 1
-  vim.g.python3_host_prog       = 'D:/python39/python.exe'
-end
 
--- # other autocommands and commands
--- ## autocmd writed in lua
-vim.api.nvim_create_autocmd('FileType', {
-  pattern='vim-plug,startuptime',
-  callback=function()
-    vim.api.nvim_buf_set_keymap(0,'n','q',':q!<CR>',{noremap=true,silent=true})
-  end
-})
 
 vim.api.nvim_create_autocmd('FileType', {
   pattern='help',
@@ -68,7 +55,6 @@ vim.api.nvim_create_autocmd('FileType', {
   end
 })
 
--- ## autocmd writed in vimscript
 vim.cmd[[
 " When open a file, always jump to the last cursor position
 autocmd BufReadPost *
@@ -87,16 +73,6 @@ else
 endif
 
 
-" dashboard
-" autocmd FileType dashboard set showtabline=0 | autocmd BufLeave <buffer> set showtabline=2
-" autocmd BufEnter * if &ft=='dashboard' | set showtabline=0 | endif
-" autocmd FileType dashboard set laststatus=0 | autocmd BufLeave <buffer> set laststatus=3
-" autocmd BufEnter * if &ft=='dashboard' | set laststatus=0 | endif
-" autocmd FileType dashboard set noruler | autocmd BufLeave <buffer> set ruler
-" autocmd BufEnter * if &ft=='dashboard' | set noruler | endif
 autocmd FileType dashboard setlocal fillchars+=eob:\ 
 autocmd FileType dashboard setlocal nowrap
-
-" fzf terminal buffer
-" autocmd TermEnter * set laststatus=0 | autocmd BufLeave <buffer> set laststatus=3
 ]]
