@@ -142,7 +142,7 @@ require('flash').setup(
         -- You can always toggle when searching with `require("flash").toggle()`
         enabled = true,
         highlight = { backdrop = false },
-        jump = { history = true, register = true, nohlsearch = false },
+        jump = { history = true, register = true, nohlsearch = true },
         search = {
           -- `forward` will be automatically set to the search direction
           -- `mode` is always set to `search`

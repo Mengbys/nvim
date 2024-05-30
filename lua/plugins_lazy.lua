@@ -157,11 +157,17 @@ require("lazy").setup(
     end,
   },
 
+  -- TODO: How to move keymappings to `keymappings.lua`?
   {
     "folke/flash.nvim",
     keys = {
       { "<space>s", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
+      { "<space>v", mode = { "n", "x", "o" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
       { "<space>a", mode = { "n", "x", "o" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
+      { "f" },
+      { "F" },
+      { "/" },
+      { "?" },
     },
     config=function()
       require('plugin_flash')
@@ -171,10 +177,7 @@ require("lazy").setup(
   {
     'smoka7/hop.nvim',
     version = "*",
-    keys = {
-      { "<space>w", mode = { "n", "x", "o" }, "<cmd>HopWordMW<cr>", desc = "Hop Word" },
-      { "<space>l", mode = { "n", "x", "o" }, "<cmd>HopLine<cr>", desc = "Hop Line" },
-    },
+    cmd={"HopWordMW","HopLine"},
     config=function()
       require('plugin_hop')
     end,

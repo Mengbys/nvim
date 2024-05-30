@@ -39,3 +39,12 @@ vim.api.nvim_set_keymap('n','<leader>n',':NvimTreeToggle<CR>',{noremap=true,sile
 
 -- symbols-outline
 vim.api.nvim_set_keymap('n','<leader>t',':SymbolsOutline<cr>',{noremap=true,silent=true})
+
+-- hop
+vim.keymap.set({"n","x","o"},"<space>w","<cmd>HopWordMW<cr>",{desc="Hop Word Multi-Windows"})
+vim.keymap.set({"n","x","o"},"<space>l","<cmd>HopLine<cr>",{desc="Hop Line"})
+
+-- flash
+-- vim.keymap.set({"n","x","o"},"<space>s",require("flash").jump(),{desc="Flash"})
+-- vim.keymap.set({"n","x","o"},"<space>v",require("flash").treesitter(),{desc="Flash Treesitter"})
+-- vim.keymap.set({"n","x","o"},"<space>a",require("flash").treesitter_search(),{desc="Flash Treesitter Search"})

@@ -1,3 +1,5 @@
+-- Basic Settings
+-- ==============
 vim.o.encoding       = 'utf-8'
 vim.o.fileencoding   = 'utf-8'
 vim.o.fileencodings  = 'utf-8,ucs-bom,gb18030,gbk,gb2312,cp936'
@@ -7,7 +9,7 @@ vim.o.shiftwidth     = 4
 vim.o.smarttab       = true
 vim.o.expandtab      = true
 vim.o.number         = true
-vim.o.relativenumber = true
+vim.o.relativenumber = false
 vim.o.cursorline     = true
 vim.o.background     = 'dark'
 vim.o.autoread       = true
@@ -24,7 +26,7 @@ vim.o.swapfile       = false
 vim.o.hls            = true
 vim.o.spr            = true
 vim.o.sb             = true
-vim.o.signcolumn     = 'number'
+vim.o.signcolumn     = 'no'
 vim.o.whichwrap      = '<,>,[,]'
 vim.o.laststatus     = 3
 vim.o.showtabline    = 1
@@ -37,7 +39,7 @@ vim.o.mouse          = 'a'
 vim.o.ruler          = false
 
 
-
+-- Commands and Auto-commands
 vim.api.nvim_create_autocmd('FileType', {
   pattern='help',
   callback=function()
@@ -45,7 +47,6 @@ vim.api.nvim_create_autocmd('FileType', {
   end
 })
 
--- file type according indentation
 vim.api.nvim_create_autocmd('FileType', {
   pattern='vim,sh,lua,yaml',
   callback=function()
@@ -55,24 +56,6 @@ vim.api.nvim_create_autocmd('FileType', {
   end
 })
 
-vim.cmd[[
-" When open a file, always jump to the last cursor position
-autocmd BufReadPost *
-  \ if line("'\"") >= 1 && line("'\"") <= line("$") && &ft !~# 'commit'
-  \ |   exe "normal! g`\""
-  \ | endif
-
-" Session save and load
-set sessionoptions-=blank
-if has('win32')
-  command QS mks! ~/AppData/Local/nvim/tmp/session0.vim | wqa
-  command LS so ~/AppData/Local/nvim/tmp/session0.vim
-else
-  command QS mks! ~/.config/nvim/tmp/session0.vim | wqa
-  command LS so ~/.config/nvim/tmp/session0.vim
-endif
-
-
-autocmd FileType dashboard setlocal fillchars+=eob:\ 
-autocmd FileType dashboard setlocal nowrap
-]]
+vim.opt.sessionoptions:remove('blank')
+vim.api.nvim_create_user_command('QS','mks! ' .. Session_file .. '| wqa',{})
+vim.api.nvim_create_user_command('LS','so ' .. Session_file,{})
