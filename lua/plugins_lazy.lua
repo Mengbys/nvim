@@ -157,33 +157,27 @@ require("lazy").setup(
     end,
   },
 
-  -- TODO: 
-  -- 1. How to use with `/` and `?`?
-  -- 2. Write a config file.
   {
     "folke/flash.nvim",
-    event = "VeryLazy",
-    ---@type Flash.Config
-    opts = {},
-    -- stylua: ignore
     keys = {
-      { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
-      { "S", mode = { "n", "x", "o" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
-      { "r", mode = "o", function() require("flash").remote() end, desc = "Remote Flash" },
-      { "R", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
-      { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
+      { "<space>s", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
+      { "<space>a", mode = { "n", "x", "o" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
     },
+    config=function()
+      require('plugin_flash')
+    end,
   },
 
-  -- TODO:
-  -- 1. Learn it and write a config for it.
-  -- 2. Confirm trigger cmds.
   {
     'smoka7/hop.nvim',
     version = "*",
-    opts = {
-      keys = 'etovxqpdygfblzhckisuran'
-    }
+    keys = {
+      { "<space>w", mode = { "n", "x", "o" }, "<cmd>HopWordMW<cr>", desc = "Hop Word" },
+      { "<space>l", mode = { "n", "x", "o" }, "<cmd>HopLine<cr>", desc = "Hop Line" },
+    },
+    config=function()
+      require('plugin_hop')
+    end,
   },
 
 },
